@@ -52,14 +52,14 @@ All colors MUST be HSL.
     /* Indian-Inspired Sports Colors */
     --sports-saffron: 30 100% 60%;
     --sports-saffron-light: 30 85% 85%;
-    --sports-emerald: 140 80% 35%;
+    --sports-emerald: 140 80% 50%;
     --sports-emerald-light: 140 60% 80%;
-    --sports-navy: 220 85% 35%;
+    --sports-navy: 220 85% 55%;
     --sports-navy-light: 220 60% 75%;
     --sports-gold: 45 100% 50%;
     --sports-gold-light: 45 80% 85%;
-    --sports-maroon: 0 70% 35%;
-    --sports-terracotta: 15 85% 55%;
+    --sports-maroon: 0 70% 50%;
+    --sports-terracotta: 15 85% 60%;
     
     /* Primary theme colors - using saffron and emerald as main */
     --sports-teal: 140 80% 35%;
