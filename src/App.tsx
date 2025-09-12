@@ -4,8 +4,10 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing";
 import SignUp from "./pages/SignUp";
+import Auth from "./pages/Auth";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import ProtectedRoute from "./components/ProtectedRoute";
 import Assessment from "./pages/Assessment";
 import SportRecommendation from "./pages/SportRecommendation";
 import Progress from "./pages/Progress";
@@ -30,20 +32,21 @@ const App = () => (
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/home" element={<Index />} />
-        <Route path="/assessment" element={<Assessment />} />
-        <Route path="/sport-recommendation" element={<SportRecommendation />} />
-        <Route path="/progress" element={<Progress />} />
-        <Route path="/leaderboards" element={<Leaderboards />} />
-        <Route path="/tests" element={<Tests />} />
-        <Route path="/height-measurement" element={<HeightMeasurement />} />
-        <Route path="/weight-measurement" element={<WeightMeasurement />} />
-        <Route path="/body-shape" element={<BodyShape />} />
-        <Route path="/power-lifting" element={<PowerLifting />} />
-        <Route path="/weight-lifting" element={<WeightLifting />} />
-        <Route path="/athletic-test" element={<AthleticTest />} />
-        <Route path="/sprints" element={<Sprints />} />
-        <Route path="/sit-ups" element={<SitUps />} />
+        <Route path="/auth" element={<Auth />} />
+        <Route path="/home" element={<ProtectedRoute><Index /></ProtectedRoute>} />
+        <Route path="/assessment" element={<ProtectedRoute><Assessment /></ProtectedRoute>} />
+        <Route path="/sport-recommendation" element={<ProtectedRoute><SportRecommendation /></ProtectedRoute>} />
+        <Route path="/progress" element={<ProtectedRoute><Progress /></ProtectedRoute>} />
+        <Route path="/leaderboards" element={<ProtectedRoute><Leaderboards /></ProtectedRoute>} />
+        <Route path="/tests" element={<ProtectedRoute><Tests /></ProtectedRoute>} />
+        <Route path="/height-measurement" element={<ProtectedRoute><HeightMeasurement /></ProtectedRoute>} />
+        <Route path="/weight-measurement" element={<ProtectedRoute><WeightMeasurement /></ProtectedRoute>} />
+        <Route path="/body-shape" element={<ProtectedRoute><BodyShape /></ProtectedRoute>} />
+        <Route path="/power-lifting" element={<ProtectedRoute><PowerLifting /></ProtectedRoute>} />
+        <Route path="/weight-lifting" element={<ProtectedRoute><WeightLifting /></ProtectedRoute>} />
+        <Route path="/athletic-test" element={<ProtectedRoute><AthleticTest /></ProtectedRoute>} />
+        <Route path="/sprints" element={<ProtectedRoute><Sprints /></ProtectedRoute>} />
+        <Route path="/sit-ups" element={<ProtectedRoute><SitUps /></ProtectedRoute>} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>

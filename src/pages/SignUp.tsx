@@ -54,7 +54,7 @@ const SignUp = () => {
             </CardHeader>
             <CardContent className="pt-0">
               <Button 
-                onClick={() => navigate("/home")}
+                onClick={() => navigate("/auth")}
                 className="w-full bg-sports-saffron hover:bg-sports-saffron/90 text-white"
                 size="lg"
               >
