@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'app.lovable.0a174cf455a54713805f8dc33b7d524d',
+  appId: 'app.lovable.athletepeakanalyzer',
   appName: 'athlete-peak-analyzer',
   webDir: 'dist',
   server: {
