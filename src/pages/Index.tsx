@@ -60,23 +60,23 @@ const Index = () => {
         {/* Quick Measurements Section */}
         <section className="mb-6">
           <h3 className="text-xl font-semibold mb-4 text-foreground">Quick Measurements</h3>
-          <div className="grid grid-cols-2 gap-4">
-            <Card className="bg-sports-teal text-white shadow-card-sports hover:shadow-sports transition-all duration-200">
-              <CardContent className="p-6 text-center">
-                <Activity className="h-12 w-12 mx-auto mb-3" />
-                <h4 className="font-semibold text-lg">Height</h4>
+          <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-2">
+            <Card className="bg-sports-teal text-white shadow-card-sports hover:shadow-sports transition-all duration-200 flex-shrink-0 w-32">
+              <CardContent className="p-4 text-center">
+                <Activity className="h-8 w-8 mx-auto mb-2" />
+                <h4 className="font-semibold text-sm">Height</h4>
               </CardContent>
             </Card>
-            <Card className="bg-sports-teal text-white shadow-card-sports hover:shadow-sports transition-all duration-200">
-              <CardContent className="p-6 text-center">
-                <Heart className="h-12 w-12 mx-auto mb-3" />
-                <h4 className="font-semibold text-lg">Weight</h4>
+            <Card className="bg-sports-teal text-white shadow-card-sports hover:shadow-sports transition-all duration-200 flex-shrink-0 w-32">
+              <CardContent className="p-4 text-center">
+                <Heart className="h-8 w-8 mx-auto mb-2" />
+                <h4 className="font-semibold text-sm">Weight</h4>
               </CardContent>
             </Card>
-            <Card className="bg-sports-teal text-white shadow-card-sports hover:shadow-sports transition-all duration-200 col-span-2">
-              <CardContent className="p-6 text-center">
-                <User className="h-12 w-12 mx-auto mb-3" />
-                <h4 className="font-semibold text-lg">Body Shape</h4>
+            <Card className="bg-sports-teal text-white shadow-card-sports hover:shadow-sports transition-all duration-200 flex-shrink-0 w-32">
+              <CardContent className="p-4 text-center">
+                <User className="h-8 w-8 mx-auto mb-2" />
+                <h4 className="font-semibold text-sm">Body Shape</h4>
               </CardContent>
             </Card>
           </div>
@@ -85,17 +85,17 @@ const Index = () => {
         {/* Sport Test Section */}
         <section>
           <h3 className="text-xl font-semibold mb-4 text-foreground">Sport Test</h3>
-          <div className="grid grid-cols-2 gap-4">
-            <Card className="bg-sports-teal text-white shadow-card-sports hover:shadow-sports transition-all duration-200">
-              <CardContent className="p-6 text-center">
-                <Dumbbell className="h-12 w-12 mx-auto mb-3" />
-                <h4 className="font-semibold text-lg">Dead Lift</h4>
+          <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-2">
+            <Card className="bg-sports-teal text-white shadow-card-sports hover:shadow-sports transition-all duration-200 flex-shrink-0 w-32">
+              <CardContent className="p-4 text-center">
+                <Dumbbell className="h-8 w-8 mx-auto mb-2" />
+                <h4 className="font-semibold text-sm">Dead Lift</h4>
               </CardContent>
             </Card>
-            <Card className="bg-sports-teal text-white shadow-card-sports hover:shadow-sports transition-all duration-200">
-              <CardContent className="p-6 text-center">
-                <Zap className="h-12 w-12 mx-auto mb-3" />
-                <h4 className="font-semibold text-lg">Athletic</h4>
+            <Card className="bg-sports-teal text-white shadow-card-sports hover:shadow-sports transition-all duration-200 flex-shrink-0 w-32">
+              <CardContent className="p-4 text-center">
+                <Zap className="h-8 w-8 mx-auto mb-2" />
+                <h4 className="font-semibold text-sm">Athletic</h4>
               </CardContent>
             </Card>
           </div>
