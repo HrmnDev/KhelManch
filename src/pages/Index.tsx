@@ -17,9 +17,18 @@ import {
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      {/* Background Pattern */}
+      <div 
+        className="fixed inset-0 opacity-5 bg-repeat bg-center pointer-events-none"
+        style={{
+          backgroundImage: "url('/lovable-uploads/b7ed4637-d94b-4826-a0d3-93602cf853b3.png')",
+          backgroundSize: '400px 400px'
+        }}
+      />
+      
       {/* Header */}
-      <header className="flex items-center justify-between p-4 pt-safe border-b bg-white sticky top-0 z-40">
+      <header className="flex items-center justify-between p-4 pt-safe border-b bg-white/95 backdrop-blur-sm sticky top-0 z-40">
         <div className="flex items-center gap-3">
           <button className="p-2 -ml-2 rounded-lg active:bg-gray-100 transition-colors">
             <Menu className="h-6 w-6 text-foreground" />
@@ -126,7 +135,7 @@ const Index = () => {
       </main>
 
       {/* Bottom Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 h-20 pb-safe bg-white border-t flex items-center justify-around px-2 z-50 shadow-lg">
+      <div className="fixed bottom-0 left-0 right-0 h-20 pb-safe bg-white/95 backdrop-blur-sm border-t flex items-center justify-around px-2 z-50 shadow-lg">
         <button className="flex flex-col items-center gap-1 p-3 text-sports-teal min-h-[44px] min-w-[44px] rounded-lg active:bg-gray-100 transition-colors">
           <House className="h-5 w-5 sm:h-6 sm:w-6" />
           <span className="text-xs font-medium">Home</span>
