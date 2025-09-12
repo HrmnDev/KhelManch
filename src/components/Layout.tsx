@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Trophy, Target, Activity, Menu, House } from "lucide-react";
 import ProfileDropdown from "./ProfileDropdown";
+import { useUserProfile } from "@/hooks/useUserProfile";
 
 interface LayoutProps {
   children: ReactNode;

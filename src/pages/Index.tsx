@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { ProgressBar } from "@/components/ProgressBar";
 import { AchievementBadge } from "@/components/AchievementBadge";
 import { StatCard } from "@/components/StatCard";
+import ProfileDropdown from "@/components/ProfileDropdown";
 const Index = () => {
   const navigate = useNavigate();
   
@@ -40,39 +41,34 @@ const Index = () => {
           </div>
         </div>
         
-        <div className="flex items-center gap-3">
-          {/* Daily Streak */}
-          <div className="hidden sm:flex items-center gap-1 bg-sports-blue/10 text-sports-blue px-2 py-1 rounded-lg">
-            <Flame className="h-4 w-4" />
-            <span className="font-bold text-sm">{userData.streak}</span>
-          </div>
-          
-          {/* XP Display */}
-          <div className="hidden sm:block min-w-[80px]">
-            <ProgressBar 
-              value={userData.xp} 
-              max={userData.maxXp} 
-              color="emerald" 
-              showPercentage={false}
-              className="text-xs"
-            />
-            <div className="text-xs text-center mt-1 font-semibold text-sports-blue">
-              {userData.xp}/{userData.maxXp} XP
+          <div className="flex items-center gap-3">
+            {/* Daily Streak */}
+            <div className="hidden sm:flex items-center gap-1 bg-sports-blue/10 text-sports-blue px-2 py-1 rounded-lg">
+              <Flame className="h-4 w-4" />
+              <span className="font-bold text-sm">{userData.streak}</span>
+            </div>
+            
+            {/* XP Display */}
+            <div className="hidden sm:block min-w-[80px]">
+              <ProgressBar 
+                value={userData.xp} 
+                max={userData.maxXp} 
+                color="emerald" 
+                showPercentage={false}
+                className="text-xs"
+              />
+              <div className="text-xs text-center mt-1 font-semibold text-sports-blue">
+                {userData.xp}/{userData.maxXp} XP
+              </div>
+            </div>
+            
+            <div className="relative">
+              <ProfileDropdown />
+              <Badge className="absolute -top-1 -right-1 h-5 w-5 p-0 bg-sports-emerald hover:bg-sports-emerald text-[10px] font-bold">
+                {userData.achievements}
+              </Badge>
             </div>
           </div>
-          
-          <button className="p-1 rounded-full active:bg-gray-100 transition-colors relative">
-            <Avatar className="h-10 w-10">
-              <AvatarImage src="/placeholder.svg" />
-              <AvatarFallback className="bg-sports-saffron text-white">
-                <User className="h-5 w-5" />
-              </AvatarFallback>
-            </Avatar>
-            <Badge className="absolute -top-1 -right-1 h-5 w-5 p-0 bg-sports-emerald hover:bg-sports-emerald text-[10px] font-bold">
-              {userData.achievements}
-            </Badge>
-          </button>
-        </div>
       </header>
 
       {/* Main Content */}

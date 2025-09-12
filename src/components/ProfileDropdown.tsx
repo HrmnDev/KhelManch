@@ -17,9 +17,10 @@ import {
   Phone, 
   LogOut, 
   Trash2,
-  Settings 
+  Camera
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useUserProfile } from "@/hooks/useUserProfile";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -34,6 +35,7 @@ import {
 const ProfileDropdown = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
+  const { profile } = useUserProfile();
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
 
@@ -86,7 +88,7 @@ const ProfileDropdown = () => {
         <DropdownMenuTrigger asChild>
           <button className="p-1 rounded-full active:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-sports-teal focus:ring-offset-2">
             <Avatar className="h-10 w-10">
-              <AvatarImage src="/placeholder.svg" />
+              <AvatarImage src={profile?.avatar_url || "/placeholder.svg"} />
               <AvatarFallback className="bg-sports-teal text-white">
                 <User className="h-5 w-5" />
               </AvatarFallback>
@@ -105,6 +107,11 @@ const ProfileDropdown = () => {
           </DropdownMenuLabel>
           
           <DropdownMenuSeparator />
+          
+          <DropdownMenuItem onClick={() => navigate("/profile/avatar")} className="cursor-pointer">
+            <Camera className="mr-2 h-4 w-4" />
+            <span>Profile Photo</span>
+          </DropdownMenuItem>
           
           <DropdownMenuItem onClick={() => navigate("/profile/email")} className="cursor-pointer">
             <Mail className="mr-2 h-4 w-4" />

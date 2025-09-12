@@ -24,6 +24,7 @@ import SitUps from "./pages/SitUps";
 import EmailSettings from "./pages/profile/EmailSettings";
 import PasswordSettings from "./pages/profile/PasswordSettings";
 import MobileSettings from "./pages/profile/MobileSettings";
+import AvatarSettings from "./pages/profile/AvatarSettings";
 
 const queryClient = new QueryClient();
 
@@ -53,6 +54,7 @@ const App = () => (
         <Route path="/profile/email" element={<ProtectedRoute><EmailSettings /></ProtectedRoute>} />
         <Route path="/profile/password" element={<ProtectedRoute><PasswordSettings /></ProtectedRoute>} />
         <Route path="/profile/mobile" element={<ProtectedRoute><MobileSettings /></ProtectedRoute>} />
+        <Route path="/profile/avatar" element={<ProtectedRoute><AvatarSettings /></ProtectedRoute>} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>
