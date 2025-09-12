@@ -32,7 +32,7 @@ const MobileSettings = () => {
           
           // Note: We'd need to add a mobile field to profiles table
           // For now, this is a placeholder
-          setCurrentMobile(profile?.mobile || "");
+          setCurrentMobile((profile as any)?.mobile || "");
         }
       } catch (error) {
         console.error("Error fetching profile:", error);
@@ -127,8 +127,15 @@ const MobileSettings = () => {
       // Update profile with new mobile number
       const { data: { user } } = await supabase.auth.getUser();
       if (user) {
-        // Note: This requires adding a mobile field to the profiles table
-        // For now, we'll just show a success message
+        // Update the profiles table with the new mobile number
+        const { error: updateError } = await supabase
+          .from("profiles")
+          .update({ mobile: newMobile })
+          .eq("user_id", user.id);
+        
+        if (updateError) {
+          throw updateError;
+        }
         
         setCurrentMobile(newMobile);
         setNewMobile("");
