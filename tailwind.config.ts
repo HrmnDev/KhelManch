@@ -57,6 +57,22 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        sports: {
+          teal: "hsl(var(--sports-teal))",
+          "teal-light": "hsl(var(--sports-teal-light))",
+          orange: "hsl(var(--sports-orange))",
+          blue: "hsl(var(--sports-blue))",
+          purple: "hsl(var(--sports-purple))",
+          green: "hsl(var(--sports-green))",
+        },
+      },
+      backgroundImage: {
+        "gradient-sports": "var(--gradient-sports)",
+        "gradient-card": "var(--gradient-card)",
+      },
+      boxShadow: {
+        "sports": "var(--shadow-sports)",
+        "card-sports": "var(--shadow-card)",
       },
       borderRadius: {
         lg: "var(--radius)",

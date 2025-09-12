@@ -1,11 +1,111 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { 
+  Trophy, 
+  Target, 
+  Activity, 
+  Dumbbell, 
+  Heart, 
+  Timer, 
+  Zap,
+  Play,
+  Menu,
+  User
+} from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-background">
+      {/* Header */}
+      <header className="flex items-center justify-between p-4 border-b">
+        <div className="flex items-center gap-3">
+          <Menu className="h-6 w-6 text-foreground" />
+          <h1 className="text-2xl font-bold text-foreground">SportsAssess</h1>
+        </div>
+        <Avatar className="h-10 w-10">
+          <AvatarImage src="/placeholder.svg" />
+          <AvatarFallback className="bg-sports-teal text-white">
+            <User className="h-5 w-5" />
+          </AvatarFallback>
+        </Avatar>
+      </header>
+
+      {/* Main Content */}
+      <main className="p-4 pb-20">
+        {/* Sports Recommendation Card */}
+        <Card className="mb-6 bg-gradient-sports text-white shadow-sports overflow-hidden relative">
+          <CardContent className="p-6">
+            <div className="flex items-center justify-between">
+              <div className="flex-1">
+                <h2 className="text-xl font-bold mb-2">Sports Recommendation System</h2>
+                <Button 
+                  variant="secondary" 
+                  size="sm"
+                  className="bg-sports-orange hover:bg-sports-orange/90 text-white border-0"
+                >
+                  Click Here
+                </Button>
+              </div>
+              <div className="flex gap-2 opacity-20">
+                <Trophy className="h-8 w-8" />
+                <Target className="h-8 w-8" />
+                <Dumbbell className="h-8 w-8" />
+              </div>
+            </div>
+            {/* Decorative Elements */}
+            <div className="absolute -right-4 -top-4 opacity-10">
+              <div className="flex flex-wrap gap-2">
+                <div className="w-3 h-3 rounded-full bg-white"></div>
+                <div className="w-2 h-2 rounded-full bg-white"></div>
+                <div className="w-4 h-4 rounded-full bg-white"></div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Health Test Section */}
+        <section className="mb-6">
+          <h3 className="text-xl font-semibold mb-4 text-foreground">Health Test</h3>
+          <div className="grid grid-cols-2 gap-4">
+            <Card className="bg-sports-teal text-white shadow-card-sports hover:shadow-sports transition-all duration-200">
+              <CardContent className="p-6 text-center">
+                <Activity className="h-12 w-12 mx-auto mb-3" />
+                <h4 className="font-semibold text-lg">Knock Knees</h4>
+              </CardContent>
+            </Card>
+            <Card className="bg-sports-teal text-white shadow-card-sports hover:shadow-sports transition-all duration-200">
+              <CardContent className="p-6 text-center">
+                <Heart className="h-12 w-12 mx-auto mb-3" />
+                <h4 className="font-semibold text-lg">BMI</h4>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Sport Test Section */}
+        <section>
+          <h3 className="text-xl font-semibold mb-4 text-foreground">Sport Test</h3>
+          <div className="grid grid-cols-2 gap-4">
+            <Card className="bg-sports-teal text-white shadow-card-sports hover:shadow-sports transition-all duration-200">
+              <CardContent className="p-6 text-center">
+                <Dumbbell className="h-12 w-12 mx-auto mb-3" />
+                <h4 className="font-semibold text-lg">Dead Lift</h4>
+              </CardContent>
+            </Card>
+            <Card className="bg-sports-teal text-white shadow-card-sports hover:shadow-sports transition-all duration-200">
+              <CardContent className="p-6 text-center">
+                <Zap className="h-12 w-12 mx-auto mb-3" />
+                <h4 className="font-semibold text-lg">Athletic</h4>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+      </main>
+
+      {/* Bottom Navigation Placeholder */}
+      <div className="fixed bottom-0 left-0 right-0 h-16 bg-white border-t flex items-center justify-center">
+        <div className="w-8 h-1 bg-foreground/20 rounded-full"></div>
       </div>
     </div>
   );
