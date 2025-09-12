@@ -53,6 +53,18 @@ const Auth = () => {
             variant: "destructive"
           });
           setIsLogin(true);
+        } else if (error.message.includes("Password should be at least 6 characters")) {
+          toast({
+            title: "Weak password",
+            description: "Password must be at least 6 characters long. Please choose a stronger password.",
+            variant: "destructive"
+          });
+        } else if (error.message.includes("Invalid email")) {
+          toast({
+            title: "Invalid email",
+            description: "Please enter a valid email address.",
+            variant: "destructive"
+          });
         } else {
           toast({
             title: "Sign up failed",
@@ -63,7 +75,7 @@ const Auth = () => {
       } else {
         toast({
           title: "Welcome to KhelManch!",
-          description: "Account created successfully. Please check your email to verify your account.",
+          description: "Account created successfully. Please check your email to verify your account before signing in.",
         });
         // Don't navigate immediately - wait for email verification
       }
@@ -99,6 +111,18 @@ const Auth = () => {
           toast({
             title: "Email not verified",
             description: "Please check your email and click the verification link before signing in.",
+            variant: "destructive"
+          });
+        } else if (error.message.includes("Too many requests")) {
+          toast({
+            title: "Too many attempts",
+            description: "Please wait a moment before trying to sign in again.",
+            variant: "destructive"
+          });
+        } else if (error.message.includes("Authentication failed")) {
+          toast({
+            title: "Authentication failed",
+            description: "Unable to authenticate. Please check your internet connection and try again.",
             variant: "destructive"
           });
         } else {

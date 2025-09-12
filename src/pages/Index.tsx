@@ -300,7 +300,10 @@ const Index = () => {
 
       {/* Bottom Navigation */}
       <div className="fixed bottom-0 left-0 right-0 h-20 pb-safe bg-white/95 backdrop-blur-sm border-t flex items-center justify-around px-2 z-50 shadow-lg">
-        <button className="flex flex-col items-center gap-1 p-3 text-sports-saffron min-h-[44px] min-w-[44px] rounded-lg active:bg-gray-100 transition-colors">
+        <button 
+          onClick={() => navigate("/home")}
+          className="flex flex-col items-center gap-1 p-3 text-sports-saffron min-h-[44px] min-w-[44px] rounded-lg active:bg-gray-100 transition-colors"
+        >
           <House className="h-5 w-5 sm:h-6 sm:w-6" />
           <span className="text-xs font-medium">Home</span>
         </button>
