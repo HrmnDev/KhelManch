@@ -21,13 +21,15 @@ const AvatarSettings = () => {
       try {
         const { data: { user } } = await supabase.auth.getUser();
         if (user) {
-          const { data: profile } = await supabase
+          const { data: profile, error } = await supabase
             .from("profiles")
             .select("avatar_url")
             .eq("user_id", user.id)
-            .single();
+            .maybeSingle();
           
-          if (profile?.avatar_url) {
+          if (error) {
+            console.error("Error fetching profile:", error);
+          } else if (profile?.avatar_url) {
             setCurrentAvatar(profile.avatar_url);
           }
         }
@@ -106,22 +108,27 @@ const AvatarSettings = () => {
       // Update profile with new avatar URL
       const { error: updateError } = await supabase
         .from("profiles")
-        .update({ avatar_url: publicUrl })
-        .eq("user_id", user.id);
+        .upsert({ 
+          user_id: user.id,
+          avatar_url: publicUrl,
+          full_name: user.user_metadata?.full_name || user.email
+        }, {
+          onConflict: 'user_id'
+        });
 
       if (updateError) throw updateError;
 
       setCurrentAvatar(publicUrl);
       
-      // Force a small delay to ensure the file is accessible
+      toast({
+        title: "Avatar updated",
+        description: "Your profile photo has been successfully updated.",
+      });
+      
+      // Refresh the page to show the new avatar
       setTimeout(() => {
         window.location.reload();
       }, 1000);
-      
-      toast({
-        title: "Avatar updated",
-        description: "Your profile photo has been successfully updated. Page will refresh shortly.",
-      });
     } catch (error: any) {
       console.error("Avatar upload error:", error);
       toast({

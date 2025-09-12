@@ -24,13 +24,21 @@ export const useUserProfile = () => {
         setUser(user);
 
         if (user) {
-          const { data: profile } = await supabase
-            .from("profiles")
-            .select("*")
-            .eq("user_id", user.id)
-            .single();
+          try {
+            const { data: profile, error } = await supabase
+              .from("profiles")
+              .select("*")
+              .eq("user_id", user.id)
+              .maybeSingle();
 
-          setProfile(profile);
+            if (error) {
+              console.error("Error fetching profile:", error);
+            } else {
+              setProfile(profile);
+            }
+          } catch (error) {
+            console.error("Error in initial profile fetch:", error);
+          }
         }
       } catch (error) {
         console.error("Error fetching user profile:", error);
@@ -48,13 +56,17 @@ export const useUserProfile = () => {
 
         if (session?.user) {
           try {
-            const { data: profile } = await supabase
+            const { data: profile, error } = await supabase
               .from("profiles")
               .select("*")
               .eq("user_id", session.user.id)
-              .single();
+              .maybeSingle();
 
-            setProfile(profile);
+            if (error) {
+              console.error("Error fetching profile on auth change:", error);
+            } else {
+              setProfile(profile);
+            }
           } catch (error) {
             console.error("Error fetching profile on auth change:", error);
           }
@@ -76,7 +88,7 @@ export const useUserProfile = () => {
         .from("profiles")
         .select("*")
         .eq("user_id", user.id)
-        .single();
+        .maybeSingle();
 
       if (error) {
         console.error("Error fetching profile:", error);
