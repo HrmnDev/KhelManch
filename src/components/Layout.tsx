@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Trophy, Target, Activity, Menu, User, House } from "lucide-react";
+import { Trophy, Target, Activity, Menu, House } from "lucide-react";
+import ProfileDropdown from "./ProfileDropdown";
 
 interface LayoutProps {
   children: ReactNode;
@@ -27,14 +27,7 @@ const Layout = ({ children, title = "KhelManch" }: LayoutProps) => {
           </button>
           <h1 className="text-xl sm:text-2xl font-bold text-foreground">{title}</h1>
         </div>
-        <button className="p-1 rounded-full active:bg-gray-100 transition-colors">
-          <Avatar className="h-10 w-10">
-            <AvatarImage src="/placeholder.svg" />
-            <AvatarFallback className="bg-sports-teal text-white">
-              <User className="h-5 w-5" />
-            </AvatarFallback>
-          </Avatar>
-        </button>
+        <ProfileDropdown />
       </header>
 
       {/* Main Content */}
