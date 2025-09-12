@@ -19,7 +19,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background relative">
       {/* Background Pattern */}
-      <div className="fixed inset-0 bg-sports-pattern opacity-15 pointer-events-none z-0" />
+      <div className="fixed inset-0 bg-sports-pattern opacity-40 pointer-events-none z-0" />
       
       {/* Header */}
       <header className="flex items-center justify-between p-4 pt-safe border-b bg-white/95 backdrop-blur-sm sticky top-0 z-40">
