@@ -54,33 +54,33 @@ const Tests = () => {
               <Activity className="h-5 w-5 text-sports-navy" />
               Quick Measurements
             </h3>
-            <div className="flex gap-3 overflow-x-auto scrollbar-hide pb-2 px-1">
+            <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-2 px-1">
               <button className="flex-shrink-0 group" onClick={() => navigate("/height-measurement")}>
-                <Card className="bg-sports-navy text-white shadow-card-sports hover:shadow-glow transition-all duration-300 hover:scale-105 active:scale-95 w-40 sm:w-44 relative overflow-hidden">
-                  <CardContent className="p-4 text-center min-h-[140px] flex flex-col justify-center relative z-10">
-                    <Activity className="h-9 w-9 sm:h-10 sm:w-10 mx-auto mb-2 group-hover:animate-pulse" />
-                    <h4 className="font-semibold text-sm sm:text-base">Height</h4>
-                    <div className="text-[10px] text-white/60 mt-1">+10 XP</div>
+                <Card className="bg-sports-navy text-white shadow-card-sports hover:shadow-glow transition-all duration-300 hover:scale-105 active:scale-95 w-48 sm:w-52 relative overflow-hidden">
+                  <CardContent className="p-6 text-center min-h-[160px] flex flex-col justify-center relative z-10">
+                    <Activity className="h-12 w-12 sm:h-14 sm:w-14 mx-auto mb-4 group-hover:animate-pulse" />
+                    <h4 className="font-semibold text-base sm:text-lg mb-2">Height</h4>
+                    <div className="text-xs text-white/60 mt-1">+10 XP</div>
                   </CardContent>
                   <div className="absolute inset-0 bg-gradient-to-t from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Card>
               </button>
               <button className="flex-shrink-0 group" onClick={() => navigate("/weight-measurement")}>
-                <Card className="bg-sports-maroon text-white shadow-maroon hover:shadow-glow transition-all duration-300 hover:scale-105 active:scale-95 w-40 sm:w-44 relative overflow-hidden">
-                  <CardContent className="p-4 text-center min-h-[140px] flex flex-col justify-center relative z-10">
-                    <Heart className="h-9 w-9 sm:h-10 sm:w-10 mx-auto mb-2 group-hover:animate-pulse" />
-                    <h4 className="font-semibold text-sm sm:text-base">Weight</h4>
-                    <div className="text-[10px] text-white/60 mt-1">+10 XP</div>
+                <Card className="bg-sports-maroon text-white shadow-maroon hover:shadow-glow transition-all duration-300 hover:scale-105 active:scale-95 w-48 sm:w-52 relative overflow-hidden">
+                  <CardContent className="p-6 text-center min-h-[160px] flex flex-col justify-center relative z-10">
+                    <Heart className="h-12 w-12 sm:h-14 sm:w-14 mx-auto mb-4 group-hover:animate-pulse" />
+                    <h4 className="font-semibold text-base sm:text-lg mb-2">Weight</h4>
+                    <div className="text-xs text-white/60 mt-1">+10 XP</div>
                   </CardContent>
                   <div className="absolute inset-0 bg-gradient-to-t from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Card>
               </button>
               <button className="flex-shrink-0 group" onClick={() => navigate("/body-shape")}>
-                <Card className="bg-sports-emerald text-white shadow-card-sports hover:shadow-glow transition-all duration-300 hover:scale-105 active:scale-95 w-40 sm:w-44 relative overflow-hidden">
-                  <CardContent className="p-4 text-center min-h-[140px] flex flex-col justify-center relative z-10">
-                    <User className="h-9 w-9 sm:h-10 sm:w-10 mx-auto mb-2 group-hover:animate-pulse" />
-                    <h4 className="font-semibold text-sm sm:text-base">Body Shape</h4>
-                    <div className="text-[10px] text-white/60 mt-1">+15 XP</div>
+                <Card className="bg-sports-emerald text-white shadow-card-sports hover:shadow-glow transition-all duration-300 hover:scale-105 active:scale-95 w-48 sm:w-52 relative overflow-hidden">
+                  <CardContent className="p-6 text-center min-h-[160px] flex flex-col justify-center relative z-10">
+                    <User className="h-12 w-12 sm:h-14 sm:w-14 mx-auto mb-4 group-hover:animate-pulse" />
+                    <h4 className="font-semibold text-base sm:text-lg mb-2">Body Shape</h4>
+                    <div className="text-xs text-white/60 mt-1">+15 XP</div>
                   </CardContent>
                   <div className="absolute inset-0 bg-gradient-to-t from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Card>
@@ -94,23 +94,23 @@ const Tests = () => {
               <Zap className="h-5 w-5 text-sports-gold" />
               Sport Tests
             </h3>
-            <div className="flex gap-3 overflow-x-auto scrollbar-hide pb-2 px-1">
+            <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-2 px-1">
               <button className="flex-shrink-0 group" onClick={() => navigate("/power-lifting")}>
-                <Card className="bg-sports-terracotta text-white shadow-maroon hover:shadow-glow transition-all duration-300 hover:scale-105 active:scale-95 w-40 sm:w-44 relative overflow-hidden">
-                  <CardContent className="p-4 text-center min-h-[140px] flex flex-col justify-center relative z-10">
-                    <Dumbbell className="h-9 w-9 sm:h-10 sm:w-10 mx-auto mb-2 group-hover:animate-pulse" />
-                    <h4 className="font-semibold text-sm sm:text-base">Power Lifting</h4>
-                    <div className="text-[10px] text-white/60 mt-1">+25 XP</div>
+                <Card className="bg-sports-terracotta text-white shadow-maroon hover:shadow-glow transition-all duration-300 hover:scale-105 active:scale-95 w-48 sm:w-52 relative overflow-hidden">
+                  <CardContent className="p-6 text-center min-h-[160px] flex flex-col justify-center relative z-10">
+                    <Dumbbell className="h-12 w-12 sm:h-14 sm:w-14 mx-auto mb-4 group-hover:animate-pulse" />
+                    <h4 className="font-semibold text-base sm:text-lg mb-2">Power Lifting</h4>
+                    <div className="text-xs text-white/60 mt-1">+25 XP</div>
                   </CardContent>
                   <div className="absolute inset-0 bg-gradient-to-t from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Card>
               </button>
               <button className="flex-shrink-0 group" onClick={() => navigate("/athletic-test")}>
-                <Card className="bg-sports-gold text-white shadow-gold hover:shadow-glow transition-all duration-300 hover:scale-105 active:scale-95 w-40 sm:w-44 relative overflow-hidden">
-                  <CardContent className="p-4 text-center min-h-[140px] flex flex-col justify-center relative z-10">
-                    <Zap className="h-9 w-9 sm:h-10 sm:w-10 mx-auto mb-2 group-hover:animate-pulse" />
-                    <h4 className="font-semibold text-sm sm:text-base">Athletic</h4>
-                    <div className="text-[10px] text-white/60 mt-1">+30 XP</div>
+                <Card className="bg-sports-gold text-white shadow-gold hover:shadow-glow transition-all duration-300 hover:scale-105 active:scale-95 w-48 sm:w-52 relative overflow-hidden">
+                  <CardContent className="p-6 text-center min-h-[160px] flex flex-col justify-center relative z-10">
+                    <Zap className="h-12 w-12 sm:h-14 sm:w-14 mx-auto mb-4 group-hover:animate-pulse" />
+                    <h4 className="font-semibold text-base sm:text-lg mb-2">Athletic</h4>
+                    <div className="text-xs text-white/60 mt-1">+30 XP</div>
                   </CardContent>
                   <div className="absolute inset-0 bg-gradient-to-t from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Card>
