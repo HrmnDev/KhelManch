@@ -21,6 +21,7 @@ import WeightLifting from "./pages/WeightLifting";
 import AthleticTest from "./pages/AthleticTest";
 import Sprints from "./pages/Sprints";
 import SitUps from "./pages/SitUps";
+import JumpAnalysis from "./pages/JumpAnalysis";
 import EmailSettings from "./pages/profile/EmailSettings";
 import PasswordSettings from "./pages/profile/PasswordSettings";
 import MobileSettings from "./pages/profile/MobileSettings";
@@ -51,6 +52,7 @@ const App = () => (
         <Route path="/athletic-test" element={<ProtectedRoute><AthleticTest /></ProtectedRoute>} />
         <Route path="/sprints" element={<ProtectedRoute><Sprints /></ProtectedRoute>} />
         <Route path="/sit-ups" element={<ProtectedRoute><SitUps /></ProtectedRoute>} />
+        <Route path="/jump-analysis" element={<ProtectedRoute><JumpAnalysis /></ProtectedRoute>} />
         <Route path="/profile/email" element={<ProtectedRoute><EmailSettings /></ProtectedRoute>} />
         <Route path="/profile/password" element={<ProtectedRoute><PasswordSettings /></ProtectedRoute>} />
         <Route path="/profile/mobile" element={<ProtectedRoute><MobileSettings /></ProtectedRoute>} />
