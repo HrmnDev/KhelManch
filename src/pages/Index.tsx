@@ -29,17 +29,17 @@ const Index = () => {
       <main className="p-4 pb-24 pt-safe relative z-10">
         {/* Hero Assessment Section */}
         <button className="w-full mb-6">
-          <Card className="bg-sports-orange border-sports-orange shadow-card-sports overflow-hidden relative active:scale-95 transition-all duration-200 hover:shadow-sports">
-            <CardContent className="p-6 min-h-[160px] flex items-center justify-center bg-[#4fbce9]">
+          <Card className="bg-gradient-to-br from-sports-teal to-sports-blue border-sports-teal shadow-card-sports overflow-hidden relative active:scale-95 transition-all duration-200 hover:shadow-sports">
+            <CardContent className="p-6 min-h-[160px] flex items-center justify-center">
               <div className="text-center w-full">
-                <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-sports-orange leading-tight">🏆 Unleash Your Athletic Potential</h2>
-                <p className="text-lg sm:text-xl font-bold mb-4 text-white bg-sports-orange/90 px-4 py-2 rounded-lg inline-block shadow-lg">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-white leading-tight">🏆 Unleash Your Athletic Potential</h2>
+                <p className="text-lg sm:text-xl font-bold mb-4 text-sports-teal bg-white px-4 py-2 rounded-lg inline-block shadow-lg">
                   Get Scouted & Recruited
                 </p>
-                <p className="text-sm sm:text-base text-foreground/80 mb-6 leading-relaxed font-medium">
+                <p className="text-sm sm:text-base text-white/90 mb-6 leading-relaxed font-medium">
                   Complete comprehensive fitness assessments, showcase your skills, and compete with athletes nationwide to get discovered by top scouts and coaches
                 </p>
-                <div className="bg-sports-orange hover:bg-sports-orange/90 text-white border-0 min-h-[44px] px-8 text-base font-semibold rounded-lg flex items-center justify-center transition-colors">
+                <div className="bg-white hover:bg-white/90 text-sports-teal border-2 border-white min-h-[44px] px-8 text-base font-semibold rounded-lg flex items-center justify-center transition-colors">
                   Start Assessment
                 </div>
               </div>
@@ -56,8 +56,8 @@ const Index = () => {
                 <p className="text-sm sm:text-base text-white/90 mb-4 font-medium leading-relaxed">
                   AI-powered analysis matches your unique abilities to the ideal sports for maximum success
                 </p>
-                <div className="bg-sports-orange hover:bg-sports-orange/90 text-white border-0 min-h-[44px] px-6 text-base font-medium rounded-md flex items-center justify-center">
-                  Click Here
+                <div className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white border border-white/30 min-h-[44px] px-6 text-base font-medium rounded-md flex items-center justify-center transition-all">
+                  Discover My Sport
                 </div>
               </div>
               {/* Decorative Elements */}
