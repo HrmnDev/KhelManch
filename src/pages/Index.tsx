@@ -11,7 +11,8 @@ import {
   Zap,
   Play,
   Menu,
-  User
+  User,
+  House
 } from "lucide-react";
 
 const Index = () => {
@@ -123,9 +124,7 @@ const Index = () => {
       {/* Bottom Navigation */}
       <div className="fixed bottom-0 left-0 right-0 h-16 bg-white border-t flex items-center justify-around px-4 z-50">
         <button className="flex flex-col items-center gap-1 p-2 text-sports-teal">
-          <div className="h-6 w-6 flex items-center justify-center">
-            <div className="w-6 h-6 bg-sports-teal rounded-full"></div>
-          </div>
+          <House className="h-6 w-6" />
           <span className="text-xs font-medium">Home</span>
         </button>
         
