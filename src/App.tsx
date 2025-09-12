@@ -14,6 +14,7 @@ import HeightMeasurement from "./pages/HeightMeasurement";
 import WeightMeasurement from "./pages/WeightMeasurement";
 import BodyShape from "./pages/BodyShape";
 import PowerLifting from "./pages/PowerLifting";
+import WeightLifting from "./pages/WeightLifting";
 import AthleticTest from "./pages/AthleticTest";
 
 const queryClient = new QueryClient();
@@ -35,6 +36,7 @@ const App = () => (
           <Route path="/weight-measurement" element={<WeightMeasurement />} />
           <Route path="/body-shape" element={<BodyShape />} />
           <Route path="/power-lifting" element={<PowerLifting />} />
+          <Route path="/weight-lifting" element={<WeightLifting />} />
           <Route path="/athletic-test" element={<AthleticTest />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

@@ -24,9 +24,15 @@ const PowerLifting = () => {
               <div className="bg-gray-50 rounded-lg p-8">
                 <Dumbbell className="h-16 w-16 mx-auto mb-4 text-sports-teal" />
                 <h3 className="font-semibold text-lg mb-2">Strength Assessment</h3>
-                <p className="text-muted-foreground">
-                  Power lifting test functionality will be available soon
+                <p className="text-muted-foreground mb-6">
+                  Analyze your weight lifting technique with video upload
                 </p>
+                <button 
+                  onClick={() => window.location.href = '/weight-lifting'}
+                  className="bg-gradient-to-r from-sports-teal to-sports-blue text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
+                >
+                  Weight Lifting
+                </button>
               </div>
             </div>
           </CardContent>
