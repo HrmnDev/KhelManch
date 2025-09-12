@@ -1,23 +1,9 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { 
-  Trophy, 
-  Target, 
-  Activity, 
-  Dumbbell, 
-  Heart, 
-  Timer, 
-  Zap,
-  Play,
-  Menu,
-  User,
-  House
-} from "lucide-react";
-
+import { Trophy, Target, Activity, Dumbbell, Heart, Timer, Zap, Play, Menu, User, House } from "lucide-react";
 const Index = () => {
-  return (
-    <div className="min-h-screen bg-background relative">
+  return <div className="min-h-screen bg-background relative">
       {/* Background Pattern */}
       <div className="fixed inset-0 bg-sports-pattern opacity-40 pointer-events-none z-0" />
       
@@ -46,12 +32,9 @@ const Index = () => {
           <Card className="bg-sports-orange/20 border-sports-orange/30 shadow-card-sports overflow-hidden relative active:scale-95 transition-all duration-200 hover:shadow-sports">
             <CardContent className="p-6 min-h-[160px] flex items-center justify-center">
               <div className="text-center w-full">
-                <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-sports-orange leading-tight">
-                  Sport Made Talent.
-                </h2>
-                <p className="text-lg sm:text-xl font-semibold mb-4 text-foreground/80">
-                  1 Year Recovered
-                </p>
+                <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-sports-orange leading-tight">Show Your Talent.</h2>
+                <p className="text-lg sm:text-xl font-semibold mb-4 text-foreground/80">Get Discovered
+              </p>
                 <p className="text-sm sm:text-base text-foreground/70 mb-6 leading-relaxed">
                   Complete fitness assessments and compete nationally
                 </p>
@@ -184,8 +167,6 @@ const Index = () => {
           <span className="text-xs font-medium">Board</span>
         </button>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
