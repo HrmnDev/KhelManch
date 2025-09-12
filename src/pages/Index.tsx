@@ -20,7 +20,7 @@ const Index = () => {
         <button className="p-1 rounded-full active:bg-gray-100 transition-colors">
           <Avatar className="h-10 w-10">
             <AvatarImage src="/placeholder.svg" />
-            <AvatarFallback className="bg-sports-teal text-white">
+            <AvatarFallback className="bg-sports-saffron text-white">
               <User className="h-5 w-5" />
             </AvatarFallback>
           </Avatar>
@@ -31,17 +31,17 @@ const Index = () => {
       <main className="p-4 pb-24 pt-safe relative z-10">
         {/* Hero Assessment Section */}
         <button className="w-full mb-6" onClick={() => navigate("/assessment")}>
-          <Card className="bg-gradient-to-br from-sports-teal to-sports-blue border-sports-teal shadow-card-sports overflow-hidden relative active:scale-95 transition-all duration-200 hover:shadow-sports">
+          <Card className="bg-gradient-to-br from-sports-saffron to-sports-gold border-sports-saffron shadow-sports overflow-hidden relative active:scale-95 transition-all duration-200 hover:shadow-lg">
             <CardContent className="p-6 min-h-[160px] flex items-center justify-center">
               <div className="text-center w-full">
                 <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-white leading-tight">🏆 Unleash Your Athletic Potential</h2>
-                <p className="text-lg sm:text-xl font-bold mb-4 text-sports-teal bg-white px-4 py-2 rounded-lg inline-block shadow-lg">
+                <p className="text-lg sm:text-xl font-bold mb-4 text-sports-saffron bg-white px-4 py-2 rounded-lg inline-block shadow-lg">
                   Get Scouted & Recruited
                 </p>
                 <p className="text-sm sm:text-base text-white/90 mb-6 leading-relaxed font-medium">
                   Complete comprehensive fitness assessments, showcase your skills, and compete with athletes nationwide to get discovered by top scouts and coaches
                 </p>
-                <div className="bg-white hover:bg-white/90 text-sports-teal border-2 border-white min-h-[44px] px-8 text-base font-semibold rounded-lg flex items-center justify-center transition-colors">
+                <div className="bg-white hover:bg-white/90 text-sports-saffron border-2 border-white min-h-[44px] px-8 text-base font-semibold rounded-lg flex items-center justify-center transition-colors">
                   Start Assessment
                 </div>
               </div>
@@ -51,7 +51,7 @@ const Index = () => {
 
         {/* Sports Recommendation Card */}
         <button className="w-full mb-6" onClick={() => navigate("/sport-recommendation")}>
-          <Card className="bg-gradient-sports text-white shadow-sports overflow-hidden relative active:scale-95 transition-all duration-200 hover:shadow-lg">
+          <Card className="bg-gradient-emerald text-white shadow-card-sports overflow-hidden relative active:scale-95 transition-all duration-200 hover:shadow-lg">
             <CardContent className="p-6 min-h-[140px] flex items-center justify-center rounded">
               <div className="text-center w-full">
                 <h2 className="text-xl sm:text-2xl font-bold mb-2 leading-tight">🎯 Find Your Perfect Sport</h2>
@@ -79,7 +79,7 @@ const Index = () => {
           <h3 className="text-lg sm:text-xl font-semibold mb-4 text-foreground px-1">Quick Measurements</h3>
           <div className="flex gap-3 overflow-x-auto scrollbar-hide pb-2 px-1">
             <button className="flex-shrink-0" onClick={() => navigate("/height-measurement")}>
-              <Card className="bg-sports-teal text-white shadow-card-sports active:scale-95 transition-all duration-200 hover:shadow-sports w-28 sm:w-32">
+              <Card className="bg-sports-navy text-white shadow-card-sports active:scale-95 transition-all duration-200 hover:shadow-lg w-28 sm:w-32">
                 <CardContent className="p-4 text-center min-h-[100px] flex flex-col justify-center">
                   <Activity className="h-7 w-7 sm:h-8 sm:w-8 mx-auto mb-2" />
                   <h4 className="font-semibold text-xs sm:text-sm">Height</h4>
@@ -87,7 +87,7 @@ const Index = () => {
               </Card>
             </button>
             <button className="flex-shrink-0" onClick={() => navigate("/weight-measurement")}>
-              <Card className="bg-sports-teal text-white shadow-card-sports active:scale-95 transition-all duration-200 hover:shadow-sports w-28 sm:w-32">
+              <Card className="bg-sports-maroon text-white shadow-maroon active:scale-95 transition-all duration-200 hover:shadow-lg w-28 sm:w-32">
                 <CardContent className="p-4 text-center min-h-[100px] flex flex-col justify-center">
                   <Heart className="h-7 w-7 sm:h-8 sm:w-8 mx-auto mb-2" />
                   <h4 className="font-semibold text-xs sm:text-sm">Weight</h4>
@@ -95,7 +95,7 @@ const Index = () => {
               </Card>
             </button>
             <button className="flex-shrink-0" onClick={() => navigate("/body-shape")}>
-              <Card className="bg-sports-teal text-white shadow-card-sports active:scale-95 transition-all duration-200 hover:shadow-sports w-28 sm:w-32">
+              <Card className="bg-sports-emerald text-white shadow-card-sports active:scale-95 transition-all duration-200 hover:shadow-lg w-28 sm:w-32">
                 <CardContent className="p-4 text-center min-h-[100px] flex flex-col justify-center">
                   <User className="h-7 w-7 sm:h-8 sm:w-8 mx-auto mb-2" />
                   <h4 className="font-semibold text-xs sm:text-sm">Body Shape</h4>
@@ -110,7 +110,7 @@ const Index = () => {
           <h3 className="text-lg sm:text-xl font-semibold mb-4 text-foreground px-1">Sport Test</h3>
           <div className="flex gap-3 overflow-x-auto scrollbar-hide pb-2 px-1">
             <button className="flex-shrink-0" onClick={() => navigate("/power-lifting")}>
-              <Card className="bg-sports-teal text-white shadow-card-sports active:scale-95 transition-all duration-200 hover:shadow-sports w-28 sm:w-32">
+              <Card className="bg-sports-terracotta text-white shadow-maroon active:scale-95 transition-all duration-200 hover:shadow-lg w-28 sm:w-32">
                 <CardContent className="p-4 text-center min-h-[100px] flex flex-col justify-center">
                   <Dumbbell className="h-7 w-7 sm:h-8 sm:w-8 mx-auto mb-2" />
                   <h4 className="font-semibold text-xs sm:text-sm">Power Lifting
@@ -119,7 +119,7 @@ const Index = () => {
               </Card>
             </button>
             <button className="flex-shrink-0" onClick={() => navigate("/athletic-test")}>
-              <Card className="bg-sports-teal text-white shadow-card-sports active:scale-95 transition-all duration-200 hover:shadow-sports w-28 sm:w-32">
+              <Card className="bg-sports-gold text-white shadow-gold active:scale-95 transition-all duration-200 hover:shadow-lg w-28 sm:w-32">
                 <CardContent className="p-4 text-center min-h-[100px] flex flex-col justify-center">
                   <Zap className="h-7 w-7 sm:h-8 sm:w-8 mx-auto mb-2" />
                   <h4 className="font-semibold text-xs sm:text-sm">Athletic</h4>
@@ -133,7 +133,7 @@ const Index = () => {
         <section className="mb-4">
           <div className="grid grid-cols-2 gap-3">
             <button className="w-full" onClick={() => navigate("/progress")}>
-              <Card className="bg-gradient-to-br from-sports-teal to-sports-blue text-white shadow-card-sports active:scale-95 transition-all duration-200 hover:shadow-sports">
+              <Card className="bg-gradient-navy text-white shadow-card-sports active:scale-95 transition-all duration-200 hover:shadow-lg">
                 <CardContent className="p-4 sm:p-6 text-center min-h-[120px] flex flex-col justify-center">
                   <Target className="h-10 w-10 sm:h-12 sm:w-12 mx-auto mb-2 sm:mb-3" />
                   <h4 className="font-semibold text-sm sm:text-lg">My Progress</h4>
@@ -141,7 +141,7 @@ const Index = () => {
               </Card>
             </button>
             <button className="w-full" onClick={() => navigate("/leaderboards")}>
-              <Card className="bg-gradient-sports text-white shadow-card-sports active:scale-95 transition-all duration-200 hover:shadow-sports">
+              <Card className="bg-gradient-maroon text-white shadow-maroon active:scale-95 transition-all duration-200 hover:shadow-lg">
                 <CardContent className="p-4 sm:p-6 text-center min-h-[120px] flex flex-col justify-center">
                   <Trophy className="h-10 w-10 sm:h-12 sm:w-12 mx-auto mb-2 sm:mb-3" />
                   <h4 className="font-semibold text-sm sm:text-lg">Leaderboards</h4>
@@ -154,7 +154,7 @@ const Index = () => {
 
       {/* Bottom Navigation */}
       <div className="fixed bottom-0 left-0 right-0 h-20 pb-safe bg-white/95 backdrop-blur-sm border-t flex items-center justify-around px-2 z-50 shadow-lg">
-        <button className="flex flex-col items-center gap-1 p-3 text-sports-teal min-h-[44px] min-w-[44px] rounded-lg active:bg-gray-100 transition-colors">
+        <button className="flex flex-col items-center gap-1 p-3 text-sports-saffron min-h-[44px] min-w-[44px] rounded-lg active:bg-gray-100 transition-colors">
           <House className="h-5 w-5 sm:h-6 sm:w-6" />
           <span className="text-xs font-medium">Home</span>
         </button>

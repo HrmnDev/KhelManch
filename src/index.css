@@ -49,21 +49,39 @@ All colors MUST be HSL.
 
     --radius: 1rem;
 
-    /* Sports App Specific Colors */
-    --sports-teal: 180 98% 36%;
-    --sports-teal-light: 180 54% 85%;
-    --sports-orange: 16 100% 66%;
-    --sports-blue: 213 94% 68%;
-    --sports-purple: 262 83% 58%;
-    --sports-green: 142 76% 36%;
+    /* Indian-Inspired Sports Colors */
+    --sports-saffron: 30 100% 60%;
+    --sports-saffron-light: 30 85% 85%;
+    --sports-emerald: 140 80% 35%;
+    --sports-emerald-light: 140 60% 80%;
+    --sports-navy: 220 85% 35%;
+    --sports-navy-light: 220 60% 75%;
+    --sports-gold: 45 100% 50%;
+    --sports-gold-light: 45 80% 85%;
+    --sports-maroon: 0 70% 35%;
+    --sports-terracotta: 15 85% 55%;
     
-    /* Gradients */
-    --gradient-sports: linear-gradient(135deg, hsl(var(--sports-teal)), hsl(var(--sports-blue)));
-    --gradient-card: linear-gradient(135deg, hsl(var(--sports-teal)), hsl(var(--sports-teal-light)));
+    /* Primary theme colors - using saffron and emerald as main */
+    --sports-teal: 140 80% 35%;
+    --sports-teal-light: 140 60% 80%;
+    --sports-orange: 30 100% 60%;
+    --sports-blue: 220 85% 35%;
+    --sports-purple: 280 70% 45%;
+    --sports-green: 140 80% 35%;
     
-    /* Shadows */
-    --shadow-sports: 0 10px 30px -10px hsl(var(--sports-teal) / 0.3);
-    --shadow-card: 0 4px 20px -4px hsl(var(--sports-teal) / 0.2);
+    /* Indian-Inspired Gradients */
+    --gradient-sports: linear-gradient(135deg, hsl(var(--sports-saffron)), hsl(var(--sports-emerald)));
+    --gradient-card: linear-gradient(135deg, hsl(var(--sports-saffron)), hsl(var(--sports-gold)));
+    --gradient-emerald: linear-gradient(135deg, hsl(var(--sports-emerald)), hsl(var(--sports-emerald-light)));
+    --gradient-navy: linear-gradient(135deg, hsl(var(--sports-navy)), hsl(var(--sports-navy-light)));
+    --gradient-gold: linear-gradient(135deg, hsl(var(--sports-gold)), hsl(var(--sports-gold-light)));
+    --gradient-maroon: linear-gradient(135deg, hsl(var(--sports-maroon)), hsl(var(--sports-terracotta)));
+    
+    /* Enhanced Shadows with Indian colors */
+    --shadow-sports: 0 10px 30px -10px hsl(var(--sports-saffron) / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(var(--sports-emerald) / 0.2);
+    --shadow-gold: 0 8px 25px -5px hsl(var(--sports-gold) / 0.25);
+    --shadow-maroon: 0 6px 20px -3px hsl(var(--sports-maroon) / 0.2);
 
     --sidebar-background: 0 0% 98%;
 
@@ -154,12 +172,36 @@ All colors MUST be HSL.
     background: var(--gradient-sports);
   }
   
+  .bg-gradient-emerald {
+    background: var(--gradient-emerald);
+  }
+  
+  .bg-gradient-navy {
+    background: var(--gradient-navy);
+  }
+  
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+  
+  .bg-gradient-maroon {
+    background: var(--gradient-maroon);
+  }
+  
   .shadow-sports {
     box-shadow: var(--shadow-sports);
   }
   
   .shadow-card-sports {
     box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+  
+  .shadow-maroon {
+    box-shadow: var(--shadow-maroon);
   }
   
   .bg-sports-pattern {
