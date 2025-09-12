@@ -34,31 +34,24 @@ const Index = () => {
       {/* Main Content */}
       <main className="p-4 pb-20">
         {/* Sports Recommendation Card */}
-        <Card className="mb-6 bg-gradient-sports text-white shadow-sports overflow-hidden relative">
-          <CardContent className="p-6">
-            <div className="flex items-center justify-between">
-              <div className="flex-1">
-                <h2 className="text-xl font-bold mb-2">Sports Recommendation System</h2>
-                <Button 
-                  variant="secondary" 
-                  size="sm"
-                  className="bg-sports-orange hover:bg-sports-orange/90 text-white border-0"
-                >
-                  Click Here
-                </Button>
-              </div>
-              <div className="flex gap-2 opacity-20">
-                <Trophy className="h-8 w-8" />
-                <Target className="h-8 w-8" />
-                <Dumbbell className="h-8 w-8" />
-              </div>
+        <Card className="mb-6 bg-gradient-sports text-white shadow-sports overflow-hidden relative mx-auto max-w-sm">
+          <CardContent className="p-4">
+            <div className="text-center">
+              <h2 className="text-lg font-bold mb-3">Sports Recommendation System</h2>
+              <Button 
+                variant="secondary" 
+                size="sm"
+                className="bg-sports-orange hover:bg-sports-orange/90 text-white border-0"
+              >
+                Click Here
+              </Button>
             </div>
             {/* Decorative Elements */}
-            <div className="absolute -right-4 -top-4 opacity-10">
-              <div className="flex flex-wrap gap-2">
-                <div className="w-3 h-3 rounded-full bg-white"></div>
+            <div className="absolute -right-2 -top-2 opacity-10">
+              <div className="flex flex-wrap gap-1">
                 <div className="w-2 h-2 rounded-full bg-white"></div>
-                <div className="w-4 h-4 rounded-full bg-white"></div>
+                <div className="w-1 h-1 rounded-full bg-white"></div>
+                <div className="w-3 h-3 rounded-full bg-white"></div>
               </div>
             </div>
           </CardContent>
