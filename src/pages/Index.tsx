@@ -32,11 +32,12 @@ const Index = () => {
           <Card className="bg-sports-orange border-sports-orange shadow-card-sports overflow-hidden relative active:scale-95 transition-all duration-200 hover:shadow-sports">
             <CardContent className="p-6 min-h-[160px] flex items-center justify-center bg-[#4fbce9]">
               <div className="text-center w-full">
-                <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-sports-orange leading-tight">Show Your Talent.</h2>
-                <p className="text-lg sm:text-xl font-semibold mb-4 text-foreground/80">Get Discovered
-              </p>
-                <p className="text-sm sm:text-base text-foreground/70 mb-6 leading-relaxed">
-                  Complete fitness assessments and compete nationally
+                <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-sports-orange leading-tight">🏆 Unleash Your Athletic Potential</h2>
+                <p className="text-lg sm:text-xl font-bold mb-4 text-white bg-sports-orange/90 px-4 py-2 rounded-lg inline-block shadow-lg">
+                  Get Scouted & Recruited
+                </p>
+                <p className="text-sm sm:text-base text-foreground/80 mb-6 leading-relaxed font-medium">
+                  Complete comprehensive fitness assessments, showcase your skills, and compete with athletes nationwide to get discovered by top scouts and coaches
                 </p>
                 <div className="bg-sports-orange hover:bg-sports-orange/90 text-white border-0 min-h-[44px] px-8 text-base font-semibold rounded-lg flex items-center justify-center transition-colors">
                   Start Assessment
@@ -51,7 +52,10 @@ const Index = () => {
           <Card className="bg-gradient-sports text-white shadow-sports overflow-hidden relative active:scale-95 transition-all duration-200 hover:shadow-lg">
             <CardContent className="p-6 min-h-[140px] flex items-center justify-center rounded">
               <div className="text-center w-full">
-                <h2 className="text-lg sm:text-xl font-bold mb-4 leading-tight">Sports Recommendation System</h2>
+                <h2 className="text-xl sm:text-2xl font-bold mb-2 leading-tight">🎯 Find Your Perfect Sport</h2>
+                <p className="text-sm sm:text-base text-white/90 mb-4 font-medium leading-relaxed">
+                  AI-powered analysis matches your unique abilities to the ideal sports for maximum success
+                </p>
                 <div className="bg-sports-orange hover:bg-sports-orange/90 text-white border-0 min-h-[44px] px-6 text-base font-medium rounded-md flex items-center justify-center">
                   Click Here
                 </div>
