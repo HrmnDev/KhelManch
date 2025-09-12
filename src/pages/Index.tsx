@@ -19,13 +19,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background relative">
       {/* Background Pattern */}
-      <div 
-        className="fixed inset-0 opacity-5 bg-repeat bg-center pointer-events-none"
-        style={{
-          backgroundImage: "url('/lovable-uploads/b7ed4637-d94b-4826-a0d3-93602cf853b3.png')",
-          backgroundSize: '400px 400px'
-        }}
-      />
+      <div className="fixed inset-0 bg-sports-pattern opacity-15 pointer-events-none z-0" />
       
       {/* Header */}
       <header className="flex items-center justify-between p-4 pt-safe border-b bg-white/95 backdrop-blur-sm sticky top-0 z-40">
@@ -46,7 +40,7 @@ const Index = () => {
       </header>
 
       {/* Main Content */}
-      <main className="p-4 pb-24 pt-safe">
+      <main className="p-4 pb-24 pt-safe relative z-10">
         {/* Sports Recommendation Card */}
         <Card className="mb-6 bg-gradient-sports text-white shadow-sports overflow-hidden relative">
           <CardContent className="p-6 min-h-[140px] flex items-center justify-center">

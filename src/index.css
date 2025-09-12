@@ -162,6 +162,13 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-card);
   }
   
+  .bg-sports-pattern {
+    background-image: url('/lovable-uploads/b7ed4637-d94b-4826-a0d3-93602cf853b3.png');
+    background-size: 200px 200px;
+    background-repeat: repeat;
+    background-position: center;
+  }
+  
   /* Touch optimizations */
   .touch-manipulation {
     touch-action: manipulation;
