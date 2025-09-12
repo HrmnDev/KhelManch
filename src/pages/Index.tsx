@@ -29,7 +29,7 @@ const Index = () => {
       <main className="p-4 pb-24 pt-safe relative z-10">
         {/* Hero Assessment Section */}
         <button className="w-full mb-6">
-          <Card className="bg-sports-orange/20 border-sports-orange/30 shadow-card-sports overflow-hidden relative active:scale-95 transition-all duration-200 hover:shadow-sports">
+          <Card className="bg-sports-orange border-sports-orange shadow-card-sports overflow-hidden relative active:scale-95 transition-all duration-200 hover:shadow-sports">
             <CardContent className="p-6 min-h-[160px] flex items-center justify-center">
               <div className="text-center w-full">
                 <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-sports-orange leading-tight">Show Your Talent.</h2>
