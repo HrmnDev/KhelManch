@@ -2,13 +2,16 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Trophy, Target, Activity, Dumbbell, Heart, Timer, Zap, Play, Menu, User, House, Star, Crown, Flame, TrendingUp, Award } from "lucide-react";
+import { Switch } from "@/components/ui/switch";
+import { Trophy, Target, Activity, Dumbbell, Heart, Timer, Zap, Play, Menu, User, House, Star, Crown, Flame, TrendingUp, Award, Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
 import { useNavigate } from "react-router-dom";
 import { ProgressBar } from "@/components/ProgressBar";
 import { AchievementBadge } from "@/components/AchievementBadge";
 import { StatCard } from "@/components/StatCard";
 const Index = () => {
   const navigate = useNavigate();
+  const { theme, setTheme } = useTheme();
   
   // Mock user data - in real app this would come from state/API
   const userData = {
@@ -41,6 +44,17 @@ const Index = () => {
         </div>
         
         <div className="flex items-center gap-3">
+          {/* Dark Mode Toggle */}
+          <div className="flex items-center gap-2 bg-muted/50 px-2 py-1 rounded-lg">
+            <Sun className="h-4 w-4 text-muted-foreground" />
+            <Switch
+              checked={theme === "dark"}
+              onCheckedChange={(checked) => setTheme(checked ? "dark" : "light")}
+              className="scale-75"
+            />
+            <Moon className="h-4 w-4 text-muted-foreground" />
+          </div>
+          
           {/* Daily Streak */}
           <div className="hidden sm:flex items-center gap-1 bg-sports-blue/10 text-sports-blue px-2 py-1 rounded-lg">
             <Flame className="h-4 w-4" />
