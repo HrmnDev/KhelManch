@@ -27,14 +27,14 @@ export const AchievementBadge = ({
       "relative p-3 rounded-xl border-2 transition-all duration-300",
       unlocked 
         ? "bg-sports-gold text-white border-sports-gold shadow-gold pulse-glow" 
-        : "bg-white/10 text-white/60 border-white/20",
+        : "bg-muted/50 text-muted-foreground border-border",
       unlocked && "achievement-unlock",
       className
     )}>
       <div className="flex items-center gap-3">
         <div className={cn(
           "p-2 rounded-lg", 
-          unlocked ? "bg-white/20" : "bg-white/5"
+          unlocked ? "bg-white/20" : "bg-muted/20"
         )}>
           <Icon className="h-5 w-5" />
         </div>
@@ -42,7 +42,7 @@ export const AchievementBadge = ({
           <h4 className="font-semibold text-sm truncate">{title}</h4>
           <p className="text-xs opacity-80 truncate">{description}</p>
           {!unlocked && maxProgress > 1 && (
-            <div className="mt-1 w-full bg-white/10 rounded-full h-1">
+            <div className="mt-1 w-full bg-muted/30 rounded-full h-1">
               <div 
                 className="bg-sports-gold h-full rounded-full transition-all duration-500"
                 style={{ width: `${progressPercentage}%` }}
