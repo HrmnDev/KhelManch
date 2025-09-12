@@ -19,30 +19,34 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="flex items-center justify-between p-4 border-b">
+      <header className="flex items-center justify-between p-4 pt-safe border-b bg-white sticky top-0 z-40">
         <div className="flex items-center gap-3">
-          <Menu className="h-6 w-6 text-foreground" />
-          <h1 className="text-2xl font-bold text-foreground">SportsAssess</h1>
+          <button className="p-2 -ml-2 rounded-lg active:bg-gray-100 transition-colors">
+            <Menu className="h-6 w-6 text-foreground" />
+          </button>
+          <h1 className="text-xl sm:text-2xl font-bold text-foreground">SportsAssess</h1>
         </div>
-        <Avatar className="h-10 w-10">
-          <AvatarImage src="/placeholder.svg" />
-          <AvatarFallback className="bg-sports-teal text-white">
-            <User className="h-5 w-5" />
-          </AvatarFallback>
-        </Avatar>
+        <button className="p-1 rounded-full active:bg-gray-100 transition-colors">
+          <Avatar className="h-10 w-10">
+            <AvatarImage src="/placeholder.svg" />
+            <AvatarFallback className="bg-sports-teal text-white">
+              <User className="h-5 w-5" />
+            </AvatarFallback>
+          </Avatar>
+        </button>
       </header>
 
       {/* Main Content */}
-      <main className="p-4 pb-20">
+      <main className="p-4 pb-24 pt-safe">
         {/* Sports Recommendation Card */}
-        <Card className="mb-6 bg-gradient-sports text-white shadow-sports overflow-hidden relative mx-auto max-w-sm">
-          <CardContent className="p-4 h-32">
-            <div className="text-center">
-              <h2 className="text-lg font-bold mb-3">Sports Recommendation System</h2>
+        <Card className="mb-6 bg-gradient-sports text-white shadow-sports overflow-hidden relative">
+          <CardContent className="p-6 min-h-[140px] flex items-center justify-center">
+            <div className="text-center w-full">
+              <h2 className="text-lg sm:text-xl font-bold mb-4 leading-tight">Sports Recommendation System</h2>
               <Button 
                 variant="secondary" 
-                size="sm"
-                className="bg-sports-orange hover:bg-sports-orange/90 text-white border-0"
+                size="default"
+                className="bg-sports-orange hover:bg-sports-orange/90 text-white border-0 min-h-[44px] px-6 text-base font-medium active:scale-95 transition-transform"
               >
                 Click Here
               </Button>
@@ -59,62 +63,62 @@ const Index = () => {
         </Card>
 
         {/* Quick Measurements Section */}
-        <section className="mb-6">
-          <h3 className="text-xl font-semibold mb-4 text-foreground">Quick Measurements</h3>
-          <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-2">
-            <Card className="bg-sports-teal text-white shadow-card-sports hover:shadow-sports transition-all duration-200 flex-shrink-0 w-32">
-              <CardContent className="p-4 text-center">
-                <Activity className="h-8 w-8 mx-auto mb-2" />
-                <h4 className="font-semibold text-sm">Height</h4>
+        <section className="mb-8">
+          <h3 className="text-lg sm:text-xl font-semibold mb-4 text-foreground px-1">Quick Measurements</h3>
+          <div className="flex gap-3 overflow-x-auto scrollbar-hide pb-2 px-1">
+            <Card className="bg-sports-teal text-white shadow-card-sports active:scale-95 transition-all duration-200 flex-shrink-0 w-28 sm:w-32">
+              <CardContent className="p-4 text-center min-h-[100px] flex flex-col justify-center">
+                <Activity className="h-7 w-7 sm:h-8 sm:w-8 mx-auto mb-2" />
+                <h4 className="font-semibold text-xs sm:text-sm">Height</h4>
               </CardContent>
             </Card>
-            <Card className="bg-sports-teal text-white shadow-card-sports hover:shadow-sports transition-all duration-200 flex-shrink-0 w-32">
-              <CardContent className="p-4 text-center">
-                <Heart className="h-8 w-8 mx-auto mb-2" />
-                <h4 className="font-semibold text-sm">Weight</h4>
+            <Card className="bg-sports-teal text-white shadow-card-sports active:scale-95 transition-all duration-200 flex-shrink-0 w-28 sm:w-32">
+              <CardContent className="p-4 text-center min-h-[100px] flex flex-col justify-center">
+                <Heart className="h-7 w-7 sm:h-8 sm:w-8 mx-auto mb-2" />
+                <h4 className="font-semibold text-xs sm:text-sm">Weight</h4>
               </CardContent>
             </Card>
-            <Card className="bg-sports-teal text-white shadow-card-sports hover:shadow-sports transition-all duration-200 flex-shrink-0 w-32">
-              <CardContent className="p-4 text-center">
-                <User className="h-8 w-8 mx-auto mb-2" />
-                <h4 className="font-semibold text-sm">Body Shape</h4>
+            <Card className="bg-sports-teal text-white shadow-card-sports active:scale-95 transition-all duration-200 flex-shrink-0 w-28 sm:w-32">
+              <CardContent className="p-4 text-center min-h-[100px] flex flex-col justify-center">
+                <User className="h-7 w-7 sm:h-8 sm:w-8 mx-auto mb-2" />
+                <h4 className="font-semibold text-xs sm:text-sm">Body Shape</h4>
               </CardContent>
             </Card>
           </div>
         </section>
 
         {/* Sport Test Section */}
-        <section className="mb-6">
-          <h3 className="text-xl font-semibold mb-4 text-foreground">Sport Test</h3>
-          <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-2">
-            <Card className="bg-sports-teal text-white shadow-card-sports hover:shadow-sports transition-all duration-200 flex-shrink-0 w-32">
-              <CardContent className="p-4 text-center">
-                <Dumbbell className="h-8 w-8 mx-auto mb-2" />
-                <h4 className="font-semibold text-sm">Dead Lift</h4>
+        <section className="mb-8">
+          <h3 className="text-lg sm:text-xl font-semibold mb-4 text-foreground px-1">Sport Test</h3>
+          <div className="flex gap-3 overflow-x-auto scrollbar-hide pb-2 px-1">
+            <Card className="bg-sports-teal text-white shadow-card-sports active:scale-95 transition-all duration-200 flex-shrink-0 w-28 sm:w-32">
+              <CardContent className="p-4 text-center min-h-[100px] flex flex-col justify-center">
+                <Dumbbell className="h-7 w-7 sm:h-8 sm:w-8 mx-auto mb-2" />
+                <h4 className="font-semibold text-xs sm:text-sm">Dead Lift</h4>
               </CardContent>
             </Card>
-            <Card className="bg-sports-teal text-white shadow-card-sports hover:shadow-sports transition-all duration-200 flex-shrink-0 w-32">
-              <CardContent className="p-4 text-center">
-                <Zap className="h-8 w-8 mx-auto mb-2" />
-                <h4 className="font-semibold text-sm">Athletic</h4>
+            <Card className="bg-sports-teal text-white shadow-card-sports active:scale-95 transition-all duration-200 flex-shrink-0 w-28 sm:w-32">
+              <CardContent className="p-4 text-center min-h-[100px] flex flex-col justify-center">
+                <Zap className="h-7 w-7 sm:h-8 sm:w-8 mx-auto mb-2" />
+                <h4 className="font-semibold text-xs sm:text-sm">Athletic</h4>
               </CardContent>
             </Card>
           </div>
         </section>
 
         {/* Progress and Leaderboards Section */}
-        <section>
-          <div className="grid grid-cols-2 gap-4">
-            <Card className="bg-sports-teal text-white shadow-card-sports hover:shadow-sports transition-all duration-200">
-              <CardContent className="p-6 text-center">
-                <Target className="h-12 w-12 mx-auto mb-3" />
-                <h4 className="font-semibold text-lg">My Progress</h4>
+        <section className="mb-4">
+          <div className="grid grid-cols-2 gap-3">
+            <Card className="bg-sports-teal text-white shadow-card-sports active:scale-95 transition-all duration-200">
+              <CardContent className="p-4 sm:p-6 text-center min-h-[120px] flex flex-col justify-center">
+                <Target className="h-10 w-10 sm:h-12 sm:w-12 mx-auto mb-2 sm:mb-3" />
+                <h4 className="font-semibold text-sm sm:text-lg">My Progress</h4>
               </CardContent>
             </Card>
-            <Card className="bg-sports-teal text-white shadow-card-sports hover:shadow-sports transition-all duration-200">
-              <CardContent className="p-6 text-center">
-                <Trophy className="h-12 w-12 mx-auto mb-3" />
-                <h4 className="font-semibold text-lg">Leaderboards</h4>
+            <Card className="bg-sports-teal text-white shadow-card-sports active:scale-95 transition-all duration-200">
+              <CardContent className="p-4 sm:p-6 text-center min-h-[120px] flex flex-col justify-center">
+                <Trophy className="h-10 w-10 sm:h-12 sm:w-12 mx-auto mb-2 sm:mb-3" />
+                <h4 className="font-semibold text-sm sm:text-lg">Leaderboards</h4>
               </CardContent>
             </Card>
           </div>
@@ -122,25 +126,25 @@ const Index = () => {
       </main>
 
       {/* Bottom Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 h-16 bg-white border-t flex items-center justify-around px-4 z-50">
-        <button className="flex flex-col items-center gap-1 p-2 text-sports-teal">
-          <House className="h-6 w-6" />
+      <div className="fixed bottom-0 left-0 right-0 h-20 pb-safe bg-white border-t flex items-center justify-around px-2 z-50 shadow-lg">
+        <button className="flex flex-col items-center gap-1 p-3 text-sports-teal min-h-[44px] min-w-[44px] rounded-lg active:bg-gray-100 transition-colors">
+          <House className="h-5 w-5 sm:h-6 sm:w-6" />
           <span className="text-xs font-medium">Home</span>
         </button>
         
-        <button className="flex flex-col items-center gap-1 p-2 text-foreground/60">
-          <Activity className="h-6 w-6" />
+        <button className="flex flex-col items-center gap-1 p-3 text-foreground/60 min-h-[44px] min-w-[44px] rounded-lg active:bg-gray-100 transition-colors">
+          <Activity className="h-5 w-5 sm:h-6 sm:w-6" />
           <span className="text-xs font-medium">Tests</span>
         </button>
         
-        <button className="flex flex-col items-center gap-1 p-2 text-foreground/60">
-          <Target className="h-6 w-6" />
+        <button className="flex flex-col items-center gap-1 p-3 text-foreground/60 min-h-[44px] min-w-[44px] rounded-lg active:bg-gray-100 transition-colors">
+          <Target className="h-5 w-5 sm:h-6 sm:w-6" />
           <span className="text-xs font-medium">Progress</span>
         </button>
         
-        <button className="flex flex-col items-center gap-1 p-2 text-foreground/60">
-          <Trophy className="h-6 w-6" />
-          <span className="text-xs font-medium">Leaderboard</span>
+        <button className="flex flex-col items-center gap-1 p-3 text-foreground/60 min-h-[44px] min-w-[44px] rounded-lg active:bg-gray-100 transition-colors">
+          <Trophy className="h-5 w-5 sm:h-6 sm:w-6" />
+          <span className="text-xs font-medium">Board</span>
         </button>
       </div>
     </div>
