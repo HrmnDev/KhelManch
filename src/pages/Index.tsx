@@ -57,20 +57,26 @@ const Index = () => {
           </CardContent>
         </Card>
 
-        {/* Health Test Section */}
+        {/* Quick Measurements Section */}
         <section className="mb-6">
-          <h3 className="text-xl font-semibold mb-4 text-foreground">Health Test</h3>
+          <h3 className="text-xl font-semibold mb-4 text-foreground">Quick Measurements</h3>
           <div className="grid grid-cols-2 gap-4">
             <Card className="bg-sports-teal text-white shadow-card-sports hover:shadow-sports transition-all duration-200">
               <CardContent className="p-6 text-center">
                 <Activity className="h-12 w-12 mx-auto mb-3" />
-                <h4 className="font-semibold text-lg">Knock Knees</h4>
+                <h4 className="font-semibold text-lg">Height</h4>
               </CardContent>
             </Card>
             <Card className="bg-sports-teal text-white shadow-card-sports hover:shadow-sports transition-all duration-200">
               <CardContent className="p-6 text-center">
                 <Heart className="h-12 w-12 mx-auto mb-3" />
-                <h4 className="font-semibold text-lg">BMI</h4>
+                <h4 className="font-semibold text-lg">Weight</h4>
+              </CardContent>
+            </Card>
+            <Card className="bg-sports-teal text-white shadow-card-sports hover:shadow-sports transition-all duration-200 col-span-2">
+              <CardContent className="p-6 text-center">
+                <User className="h-12 w-12 mx-auto mb-3" />
+                <h4 className="font-semibold text-lg">Body Shape</h4>
               </CardContent>
             </Card>
           </div>
