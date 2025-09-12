@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { 
@@ -16,18 +15,15 @@ import {
   Lock, 
   Phone, 
   LogOut, 
-  Trash2,
   Camera
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useUserProfile } from "@/hooks/useUserProfile";
-import { AccountDeletionFlow } from "./AccountDeletionFlow";
 
 const ProfileDropdown = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
   const { profile, user } = useUserProfile();
-  const [showDeleteFlow, setShowDeleteFlow] = useState(false);
 
   const handleLogout = async () => {
     try {
@@ -98,22 +94,8 @@ const ProfileDropdown = () => {
             <LogOut className="mr-2 h-4 w-4" />
             <span>Log Out</span>
           </DropdownMenuItem>
-          
-          <DropdownMenuItem 
-            onClick={() => setShowDeleteFlow(true)} 
-            className="cursor-pointer text-destructive focus:text-destructive"
-          >
-            <Trash2 className="mr-2 h-4 w-4" />
-            <span>Delete Account</span>
-          </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
-
-      <AccountDeletionFlow
-        open={showDeleteFlow}
-        onOpenChange={setShowDeleteFlow}
-        userEmail={user?.email}
-      />
     </>
   );
 };
