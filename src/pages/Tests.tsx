@@ -2,9 +2,27 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Activity, Dumbbell, Zap, Heart, User, Target, Trophy, Star } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useMeasurements } from "@/hooks/useMeasurements";
+import { MeasurementDialog } from "@/components/MeasurementDialog";
 
 const Tests = () => {
   const navigate = useNavigate();
+  const { getMeasurement, saveMeasurement, isLoading } = useMeasurements();
+
+  const heightMeasurement = getMeasurement('height');
+  const weightMeasurement = getMeasurement('weight');
+
+  const formatDisplayValue = (type: 'height' | 'weight', value?: number, unit?: string) => {
+    if (!value || !unit) return null;
+    
+    if (type === 'height' && unit === 'ft') {
+      const feet = Math.floor(value / 12);
+      const inches = Math.round(value % 12);
+      return `${feet}'${inches}"`;
+    }
+    
+    return `${value} ${unit}`;
+  };
 
   return (
     <Layout title="Tests">
@@ -55,26 +73,77 @@ const Tests = () => {
               Quick Measurements
             </h3>
             <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-2 px-1">
-              <button className="flex-shrink-0 group" onClick={() => navigate("/height-measurement")}>
-                <Card className="bg-sports-navy text-white shadow-card-sports hover:shadow-glow transition-all duration-300 hover:scale-105 active:scale-95 w-48 sm:w-52 relative overflow-hidden">
-                  <CardContent className="p-6 text-center min-h-[160px] flex flex-col justify-center relative z-10">
-                    <Activity className="h-12 w-12 sm:h-14 sm:w-14 mx-auto mb-4 group-hover:animate-pulse" />
-                    <h4 className="font-semibold text-base sm:text-lg mb-2">Height</h4>
-                    <div className="text-xs text-white/60 mt-1">+10 XP</div>
-                  </CardContent>
-                  <div className="absolute inset-0 bg-gradient-to-t from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                </Card>
-              </button>
-              <button className="flex-shrink-0 group" onClick={() => navigate("/weight-measurement")}>
-                <Card className="bg-sports-maroon text-white shadow-maroon hover:shadow-glow transition-all duration-300 hover:scale-105 active:scale-95 w-48 sm:w-52 relative overflow-hidden">
-                  <CardContent className="p-6 text-center min-h-[160px] flex flex-col justify-center relative z-10">
-                    <Heart className="h-12 w-12 sm:h-14 sm:w-14 mx-auto mb-4 group-hover:animate-pulse" />
-                    <h4 className="font-semibold text-base sm:text-lg mb-2">Weight</h4>
-                    <div className="text-xs text-white/60 mt-1">+10 XP</div>
-                  </CardContent>
-                  <div className="absolute inset-0 bg-gradient-to-t from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                </Card>
-              </button>
+              {/* Height Card */}
+              <MeasurementDialog
+                icon={Activity}
+                title="Height"
+                type="height"
+                currentValue={heightMeasurement?.value}
+                currentUnit={heightMeasurement?.unit}
+                onSave={(value, unit) => saveMeasurement('height', value, unit)}
+                xpValue={10}
+                cardColor="bg-sports-navy"
+              >
+                <div className="flex-shrink-0 group cursor-pointer">
+                  <Card className="bg-sports-navy text-white shadow-card-sports hover:shadow-glow transition-all duration-300 hover:scale-105 active:scale-95 w-48 sm:w-52 relative overflow-hidden">
+                    <CardContent className="p-6 text-center min-h-[160px] flex flex-col justify-center relative z-10">
+                      <Activity className="h-12 w-12 sm:h-14 sm:w-14 mx-auto mb-4 group-hover:animate-pulse" />
+                      <h4 className="font-semibold text-base sm:text-lg mb-2">Height</h4>
+                      {heightMeasurement ? (
+                        <div>
+                          <p className="text-sm font-medium mb-1">
+                            {formatDisplayValue('height', heightMeasurement.value, heightMeasurement.unit)}
+                          </p>
+                          <p className="text-[10px] text-white/60">Tap to update</p>
+                        </div>
+                      ) : (
+                        <div>
+                          <p className="text-sm text-white/80 mb-1">Not set</p>
+                          <p className="text-[10px] text-white/60">+10 XP</p>
+                        </div>
+                      )}
+                    </CardContent>
+                    <div className="absolute inset-0 bg-gradient-to-t from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </Card>
+                </div>
+              </MeasurementDialog>
+
+              {/* Weight Card */}
+              <MeasurementDialog
+                icon={Heart}
+                title="Weight"
+                type="weight"
+                currentValue={weightMeasurement?.value}
+                currentUnit={weightMeasurement?.unit}
+                onSave={(value, unit) => saveMeasurement('weight', value, unit)}
+                xpValue={10}
+                cardColor="bg-sports-maroon"
+              >
+                <div className="flex-shrink-0 group cursor-pointer">
+                  <Card className="bg-sports-maroon text-white shadow-maroon hover:shadow-glow transition-all duration-300 hover:scale-105 active:scale-95 w-48 sm:w-52 relative overflow-hidden">
+                    <CardContent className="p-6 text-center min-h-[160px] flex flex-col justify-center relative z-10">
+                      <Heart className="h-12 w-12 sm:h-14 sm:w-14 mx-auto mb-4 group-hover:animate-pulse" />
+                      <h4 className="font-semibold text-base sm:text-lg mb-2">Weight</h4>
+                      {weightMeasurement ? (
+                        <div>
+                          <p className="text-sm font-medium mb-1">
+                            {formatDisplayValue('weight', weightMeasurement.value, weightMeasurement.unit)}
+                          </p>
+                          <p className="text-[10px] text-white/60">Tap to update</p>
+                        </div>
+                      ) : (
+                        <div>
+                          <p className="text-sm text-white/80 mb-1">Not set</p>
+                          <p className="text-[10px] text-white/60">+10 XP</p>
+                        </div>
+                      )}
+                    </CardContent>
+                    <div className="absolute inset-0 bg-gradient-to-t from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </Card>
+                </div>
+              </MeasurementDialog>
+
+              {/* Body Shape Card */}
               <button className="flex-shrink-0 group" onClick={() => navigate("/body-shape")}>
                 <Card className="bg-sports-emerald text-white shadow-card-sports hover:shadow-glow transition-all duration-300 hover:scale-105 active:scale-95 w-48 sm:w-52 relative overflow-hidden">
                   <CardContent className="p-6 text-center min-h-[160px] flex flex-col justify-center relative z-10">
