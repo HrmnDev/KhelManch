@@ -1,5 +1,6 @@
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing";
@@ -31,36 +32,38 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <Toaster />
-    <Sonner />
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/auth" element={<Auth />} />
-        <Route path="/home" element={<ProtectedRoute><Index /></ProtectedRoute>} />
-        <Route path="/assessment" element={<ProtectedRoute><Assessment /></ProtectedRoute>} />
-        <Route path="/sport-recommendation" element={<ProtectedRoute><SportRecommendation /></ProtectedRoute>} />
-        <Route path="/progress" element={<ProtectedRoute><Progress /></ProtectedRoute>} />
-        <Route path="/leaderboards" element={<ProtectedRoute><Leaderboards /></ProtectedRoute>} />
-        <Route path="/tests" element={<ProtectedRoute><Tests /></ProtectedRoute>} />
-        <Route path="/height-measurement" element={<ProtectedRoute><HeightMeasurement /></ProtectedRoute>} />
-        <Route path="/weight-measurement" element={<ProtectedRoute><WeightMeasurement /></ProtectedRoute>} />
-        <Route path="/body-shape" element={<ProtectedRoute><BodyShape /></ProtectedRoute>} />
-        <Route path="/power-lifting" element={<ProtectedRoute><PowerLifting /></ProtectedRoute>} />
-        <Route path="/weight-lifting" element={<ProtectedRoute><WeightLifting /></ProtectedRoute>} />
-        <Route path="/athletic-test" element={<ProtectedRoute><AthleticTest /></ProtectedRoute>} />
-        <Route path="/sprints" element={<ProtectedRoute><Sprints /></ProtectedRoute>} />
-        <Route path="/sit-ups" element={<ProtectedRoute><SitUps /></ProtectedRoute>} />
-        <Route path="/jump-analysis" element={<ProtectedRoute><JumpAnalysis /></ProtectedRoute>} />
-        <Route path="/profile/email" element={<ProtectedRoute><EmailSettings /></ProtectedRoute>} />
-        <Route path="/profile/password" element={<ProtectedRoute><PasswordSettings /></ProtectedRoute>} />
-        <Route path="/profile/mobile" element={<ProtectedRoute><MobileSettings /></ProtectedRoute>} />
-        <Route path="/profile/avatar" element={<ProtectedRoute><AvatarSettings /></ProtectedRoute>} />
-        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </BrowserRouter>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/auth" element={<Auth />} />
+          <Route path="/home" element={<ProtectedRoute><Index /></ProtectedRoute>} />
+          <Route path="/assessment" element={<ProtectedRoute><Assessment /></ProtectedRoute>} />
+          <Route path="/sport-recommendation" element={<ProtectedRoute><SportRecommendation /></ProtectedRoute>} />
+          <Route path="/progress" element={<ProtectedRoute><Progress /></ProtectedRoute>} />
+          <Route path="/leaderboards" element={<ProtectedRoute><Leaderboards /></ProtectedRoute>} />
+          <Route path="/tests" element={<ProtectedRoute><Tests /></ProtectedRoute>} />
+          <Route path="/height-measurement" element={<ProtectedRoute><HeightMeasurement /></ProtectedRoute>} />
+          <Route path="/weight-measurement" element={<ProtectedRoute><WeightMeasurement /></ProtectedRoute>} />
+          <Route path="/body-shape" element={<ProtectedRoute><BodyShape /></ProtectedRoute>} />
+          <Route path="/power-lifting" element={<ProtectedRoute><PowerLifting /></ProtectedRoute>} />
+          <Route path="/weight-lifting" element={<ProtectedRoute><WeightLifting /></ProtectedRoute>} />
+          <Route path="/athletic-test" element={<ProtectedRoute><AthleticTest /></ProtectedRoute>} />
+          <Route path="/sprints" element={<ProtectedRoute><Sprints /></ProtectedRoute>} />
+          <Route path="/sit-ups" element={<ProtectedRoute><SitUps /></ProtectedRoute>} />
+          <Route path="/jump-analysis" element={<ProtectedRoute><JumpAnalysis /></ProtectedRoute>} />
+          <Route path="/profile/email" element={<ProtectedRoute><EmailSettings /></ProtectedRoute>} />
+          <Route path="/profile/password" element={<ProtectedRoute><PasswordSettings /></ProtectedRoute>} />
+          <Route path="/profile/mobile" element={<ProtectedRoute><MobileSettings /></ProtectedRoute>} />
+          <Route path="/profile/avatar" element={<ProtectedRoute><AvatarSettings /></ProtectedRoute>} />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </TooltipProvider>
   </QueryClientProvider>
 );
 
