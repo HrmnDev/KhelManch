@@ -168,34 +168,37 @@ const Index = () => {
         <button className="w-full mb-6 group" onClick={() => navigate("/sport-recommendation")}>
           <Card className="bg-gradient-emerald text-white shadow-card-sports overflow-hidden relative hover:shadow-glow transition-all duration-300 hover:scale-[1.02] active:scale-95">
             <CardContent className="p-6 min-h-[140px] flex items-center justify-center rounded relative">
-              {/* Sports Background Image */}
+              {/* Sports Background Image - More Prominent */}
               <div 
-                className="absolute inset-0 bg-cover bg-center opacity-20 rounded-lg"
+                className="absolute inset-0 bg-cover bg-center opacity-70 rounded-lg"
                 style={{ backgroundImage: 'url(/lovable-uploads/005f6371-8cfa-48cb-8694-f2e1e1c2a90f.png)' }}
               />
               
-              <div className="text-center w-full relative z-10">
+              {/* Dark overlay for text readability */}
+              <div className="absolute inset-0 bg-gradient-to-r from-sports-emerald/80 to-sports-teal/80 rounded-lg" />
+              
+              <div className="text-center w-full relative z-20">
                 <div className="flex justify-center mb-3">
-                  <div className="bg-white/20 p-2 rounded-full">
-                    <Target className="h-6 w-6" />
+                  <div className="bg-white/30 backdrop-blur-sm p-3 rounded-full shadow-lg">
+                    <Target className="h-6 w-6 text-white" />
                   </div>
                 </div>
-                <h2 className="text-xl sm:text-2xl font-bold mb-2 leading-tight">🎯 Find Your Perfect Sport</h2>
-                <p className="text-sm sm:text-base text-white/90 mb-4 font-medium leading-relaxed">
+                <h2 className="text-xl sm:text-2xl font-bold mb-2 leading-tight text-white drop-shadow-lg">🎯 Find Your Perfect Sport</h2>
+                <p className="text-sm sm:text-base text-white/95 mb-4 font-medium leading-relaxed drop-shadow-md">
                   AI-powered analysis matches your unique abilities to the ideal sports for maximum success
                 </p>
-                <div className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white border border-white/30 min-h-[44px] px-6 text-base font-medium rounded-md flex items-center justify-center transition-all group-hover:bg-white/40">
-                  <Zap className="h-4 w-4 mr-2" />
+                <div className="bg-white/25 hover:bg-white/35 backdrop-blur-md text-white border-2 border-white/40 min-h-[44px] px-6 text-base font-semibold rounded-md flex items-center justify-center transition-all group-hover:bg-white/45 shadow-lg">
+                  <Zap className="h-5 w-5 mr-2 text-white" />
                   Discover My Sport
                 </div>
               </div>
               
-              {/* Decorative Elements */}
-              <div className="absolute -right-2 -top-2 opacity-20 z-20">
-                <div className="flex flex-wrap gap-1">
-                  <Star className="h-4 w-4 fill-current" />
-                  <Star className="h-3 w-3 fill-current" />
-                  <Star className="h-5 w-5 fill-current" />
+              {/* Enhanced Decorative Elements */}
+              <div className="absolute top-4 right-4 opacity-80 z-30">
+                <div className="flex flex-wrap gap-2">
+                  <Star className="h-4 w-4 fill-yellow-300 text-yellow-300 animate-pulse" />
+                  <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />
+                  <Star className="h-5 w-5 fill-yellow-200 text-yellow-200 animate-pulse" />
                 </div>
               </div>
             </CardContent>
