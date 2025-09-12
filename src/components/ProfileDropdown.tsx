@@ -44,15 +44,20 @@ const ProfileDropdown = () => {
       const { error } = await supabase.auth.signOut();
       if (error) throw error;
       
+      // Clear any cached user data
+      await refreshProfile();
+      
       toast({
         title: "Logged out successfully",
         description: "You have been signed out of your account.",
       });
-      navigate("/");
+      
+      // Force navigation and reload to clear any cached state
+      window.location.href = "/";
     } catch (error) {
       console.error("Logout error:", error);
       toast({
-        variant: "destructive",
+        variant: "destructive", 
         title: "Logout failed",
         description: "There was an error logging you out. Please try again.",
       });
