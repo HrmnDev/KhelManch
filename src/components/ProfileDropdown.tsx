@@ -21,31 +21,18 @@ import {
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useUserProfile } from "@/hooks/useUserProfile";
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-} from "@/components/ui/alert-dialog";
+import { AccountDeletionFlow } from "./AccountDeletionFlow";
 
 const ProfileDropdown = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
-  const { profile, refreshProfile } = useUserProfile();
-  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
-  const [isDeleting, setIsDeleting] = useState(false);
+  const { profile, user } = useUserProfile();
+  const [showDeleteFlow, setShowDeleteFlow] = useState(false);
 
   const handleLogout = async () => {
     try {
       const { error } = await supabase.auth.signOut();
       if (error) throw error;
-      
-      // Clear any cached user data
-      await refreshProfile();
       
       toast({
         title: "Logged out successfully",
@@ -61,29 +48,6 @@ const ProfileDropdown = () => {
         title: "Logout failed",
         description: "There was an error logging you out. Please try again.",
       });
-    }
-  };
-
-  const handleDeleteAccount = async () => {
-    setIsDeleting(true);
-    try {
-      // Note: Account deletion requires server-side implementation
-      // For now, we'll show a message about contacting support
-      toast({
-        variant: "destructive",
-        title: "Account deletion requested",
-        description: "Please contact support to delete your account. This feature requires additional security measures.",
-      });
-      setShowDeleteDialog(false);
-    } catch (error) {
-      console.error("Delete account error:", error);
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: "Failed to process account deletion request.",
-      });
-    } finally {
-      setIsDeleting(false);
     }
   };
 
@@ -136,7 +100,7 @@ const ProfileDropdown = () => {
           </DropdownMenuItem>
           
           <DropdownMenuItem 
-            onClick={() => setShowDeleteDialog(true)} 
+            onClick={() => setShowDeleteFlow(true)} 
             className="cursor-pointer text-destructive focus:text-destructive"
           >
             <Trash2 className="mr-2 h-4 w-4" />
@@ -145,27 +109,11 @@ const ProfileDropdown = () => {
         </DropdownMenuContent>
       </DropdownMenu>
 
-      <AlertDialog open={showDeleteDialog} onOpenChange={setShowDeleteDialog}>
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle>Delete Account</AlertDialogTitle>
-            <AlertDialogDescription>
-              Are you sure you want to delete your account? This action cannot be undone.
-              All your data, progress, and achievements will be permanently removed.
-            </AlertDialogDescription>
-          </AlertDialogHeader>
-          <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction
-              onClick={handleDeleteAccount}
-              disabled={isDeleting}
-              className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
-            >
-              {isDeleting ? "Processing..." : "Delete Account"}
-            </AlertDialogAction>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
+      <AccountDeletionFlow
+        open={showDeleteFlow}
+        onOpenChange={setShowDeleteFlow}
+        userEmail={user?.email}
+      />
     </>
   );
 };
