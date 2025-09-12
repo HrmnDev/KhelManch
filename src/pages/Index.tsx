@@ -13,7 +13,7 @@ const Index = () => {
           <button className="p-2 -ml-2 rounded-lg active:bg-gray-100 transition-colors">
             <Menu className="h-6 w-6 text-foreground" />
           </button>
-          <h1 className="text-xl sm:text-2xl font-bold text-foreground">SportsAssess</h1>
+          <h1 className="text-xl sm:text-2xl font-bold text-foreground">KhelManch</h1>
         </div>
         <button className="p-1 rounded-full active:bg-gray-100 transition-colors">
           <Avatar className="h-10 w-10">
@@ -30,20 +30,16 @@ const Index = () => {
         {/* Hero Assessment Section */}
         <button className="w-full mb-6">
           <Card className="bg-sports-orange border-sports-orange shadow-card-sports overflow-hidden relative active:scale-95 transition-all duration-200 hover:shadow-sports">
-            <CardContent className="p-8 min-h-[180px] flex items-center justify-center bg-sports-orange">
-              <div className="text-center w-full space-y-4">
-                <div className="space-y-2">
-                  <h2 className="text-3xl sm:text-4xl font-black mb-1 text-white leading-none tracking-tight">UNLEASH</h2>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-white/95 leading-none">Your Potential</h2>
-                </div>
-                <p className="text-xl sm:text-2xl font-bold mb-3 text-white bg-white/20 inline-block px-4 py-1 rounded-full backdrop-blur-sm">
-                  GET DISCOVERED
+            <CardContent className="p-6 min-h-[160px] flex items-center justify-center bg-[#4fbce9]">
+              <div className="text-center w-full">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-sports-orange leading-tight">Show Your Talent.</h2>
+                <p className="text-lg sm:text-xl font-semibold mb-4 text-foreground/80">Get Discovered
+              </p>
+                <p className="text-sm sm:text-base text-foreground/70 mb-6 leading-relaxed">
+                  Complete fitness assessments and compete nationally
                 </p>
-                <p className="text-base sm:text-lg text-white/90 mb-6 leading-relaxed font-medium max-w-sm mx-auto">
-                  Join thousands of athletes showcasing their skills through comprehensive fitness assessments
-                </p>
-                <div className="bg-white hover:bg-white/95 text-sports-orange border-0 min-h-[50px] px-10 text-lg font-bold rounded-xl flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                  START ASSESSMENT
+                <div className="bg-sports-orange hover:bg-sports-orange/90 text-white border-0 min-h-[44px] px-8 text-base font-semibold rounded-lg flex items-center justify-center transition-colors">
+                  Start Assessment
                 </div>
               </div>
             </CardContent>
@@ -53,25 +49,19 @@ const Index = () => {
         {/* Sports Recommendation Card */}
         <button className="w-full mb-6">
           <Card className="bg-gradient-sports text-white shadow-sports overflow-hidden relative active:scale-95 transition-all duration-200 hover:shadow-lg">
-            <CardContent className="p-8 min-h-[160px] flex items-center justify-center rounded">
-              <div className="text-center w-full space-y-4">
-                <div className="space-y-2">
-                  <h2 className="text-2xl sm:text-3xl font-black mb-2 leading-tight tracking-wide">FIND YOUR</h2>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white/95 leading-tight">Perfect Sport</h3>
-                </div>
-                <p className="text-sm sm:text-base text-white/85 font-medium mb-4 max-w-xs mx-auto leading-relaxed">
-                  AI-powered matching based on your unique athletic profile
-                </p>
-                <div className="bg-sports-orange hover:bg-sports-orange/90 text-white border-0 min-h-[48px] px-8 text-base font-bold rounded-xl flex items-center justify-center transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
-                  DISCOVER SPORTS
+            <CardContent className="p-6 min-h-[140px] flex items-center justify-center rounded">
+              <div className="text-center w-full">
+                <h2 className="text-lg sm:text-xl font-bold mb-4 leading-tight">Sports Recommendation System</h2>
+                <div className="bg-sports-orange hover:bg-sports-orange/90 text-white border-0 min-h-[44px] px-6 text-base font-medium rounded-md flex items-center justify-center">
+                  Click Here
                 </div>
               </div>
-              {/* Enhanced Decorative Elements */}
-              <div className="absolute -right-3 -top-3 opacity-20">
-                <div className="flex flex-wrap gap-2">
-                  <div className="w-3 h-3 rounded-full bg-white animate-pulse"></div>
-                  <div className="w-2 h-2 rounded-full bg-white/70"></div>
-                  <div className="w-4 h-4 rounded-full bg-white animate-pulse delay-300"></div>
+              {/* Decorative Elements */}
+              <div className="absolute -right-2 -top-2 opacity-10">
+                <div className="flex flex-wrap gap-1">
+                  <div className="w-2 h-2 rounded-full bg-white"></div>
+                  <div className="w-1 h-1 rounded-full bg-white"></div>
+                  <div className="w-3 h-3 rounded-full bg-white"></div>
                 </div>
               </div>
             </CardContent>
