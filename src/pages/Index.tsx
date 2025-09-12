@@ -168,7 +168,13 @@ const Index = () => {
         <button className="w-full mb-6 group" onClick={() => navigate("/sport-recommendation")}>
           <Card className="bg-gradient-emerald text-white shadow-card-sports overflow-hidden relative hover:shadow-glow transition-all duration-300 hover:scale-[1.02] active:scale-95">
             <CardContent className="p-6 min-h-[140px] flex items-center justify-center rounded relative">
-              <div className="text-center w-full">
+              {/* Sports Background Image */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center opacity-20 rounded-lg"
+                style={{ backgroundImage: 'url(/lovable-uploads/005f6371-8cfa-48cb-8694-f2e1e1c2a90f.png)' }}
+              />
+              
+              <div className="text-center w-full relative z-10">
                 <div className="flex justify-center mb-3">
                   <div className="bg-white/20 p-2 rounded-full">
                     <Target className="h-6 w-6" />
@@ -185,7 +191,7 @@ const Index = () => {
               </div>
               
               {/* Decorative Elements */}
-              <div className="absolute -right-2 -top-2 opacity-20">
+              <div className="absolute -right-2 -top-2 opacity-20 z-20">
                 <div className="flex flex-wrap gap-1">
                   <Star className="h-4 w-4 fill-current" />
                   <Star className="h-3 w-3 fill-current" />
