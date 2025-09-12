@@ -89,6 +89,8 @@ export default {
         "card-sports": "var(--shadow-card)",
         "gold": "var(--shadow-gold)",
         "maroon": "var(--shadow-maroon)",
+        "glow": "var(--shadow-glow)",
+        "pulse": "var(--shadow-pulse)",
       },
       borderRadius: {
         lg: "var(--radius)",
