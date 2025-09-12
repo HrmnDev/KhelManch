@@ -83,7 +83,7 @@ const Index = () => {
         </section>
 
         {/* Sport Test Section */}
-        <section>
+        <section className="mb-6">
           <h3 className="text-xl font-semibold mb-4 text-foreground">Sport Test</h3>
           <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-2">
             <Card className="bg-sports-teal text-white shadow-card-sports hover:shadow-sports transition-all duration-200 flex-shrink-0 w-32">
@@ -96,6 +96,24 @@ const Index = () => {
               <CardContent className="p-4 text-center">
                 <Zap className="h-8 w-8 mx-auto mb-2" />
                 <h4 className="font-semibold text-sm">Athletic</h4>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Progress and Leaderboards Section */}
+        <section>
+          <div className="grid grid-cols-2 gap-4">
+            <Card className="bg-sports-teal text-white shadow-card-sports hover:shadow-sports transition-all duration-200">
+              <CardContent className="p-6 text-center">
+                <Target className="h-12 w-12 mx-auto mb-3" />
+                <h4 className="font-semibold text-lg">My Progress</h4>
+              </CardContent>
+            </Card>
+            <Card className="bg-sports-teal text-white shadow-card-sports hover:shadow-sports transition-all duration-200">
+              <CardContent className="p-6 text-center">
+                <Trophy className="h-12 w-12 mx-auto mb-3" />
+                <h4 className="font-semibold text-lg">Leaderboards</h4>
               </CardContent>
             </Card>
           </div>
