@@ -4,7 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import UserAvatar from "@/components/UserAvatar";
 import { useToast } from "@/hooks/use-toast";
 import { ArrowLeft, Camera, Upload, Trash2, User } from "lucide-react";
 
@@ -112,9 +112,15 @@ const AvatarSettings = () => {
       if (updateError) throw updateError;
 
       setCurrentAvatar(publicUrl);
+      
+      // Force a small delay to ensure the file is accessible
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+      
       toast({
         title: "Avatar updated",
-        description: "Your profile photo has been successfully updated.",
+        description: "Your profile photo has been successfully updated. Page will refresh shortly.",
       });
     } catch (error: any) {
       console.error("Avatar upload error:", error);
@@ -160,9 +166,15 @@ const AvatarSettings = () => {
       if (updateError) throw updateError;
 
       setCurrentAvatar("");
+      
+      // Force a small delay then refresh
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
+      
       toast({
         title: "Avatar removed",
-        description: "Your profile photo has been removed.",
+        description: "Your profile photo has been removed. Page will refresh shortly.",
       });
     } catch (error: any) {
       console.error("Avatar delete error:", error);
@@ -201,12 +213,7 @@ const AvatarSettings = () => {
           <CardContent className="space-y-6">
             {/* Current Avatar Display */}
             <div className="flex flex-col items-center space-y-4">
-              <Avatar className="h-32 w-32">
-                <AvatarImage src={currentAvatar} />
-                <AvatarFallback className="bg-sports-teal text-white text-2xl">
-                  <User className="h-16 w-16" />
-                </AvatarFallback>
-              </Avatar>
+              <UserAvatar size="xl" />
               
               <div className="text-sm text-center text-muted-foreground">
                 {currentAvatar ? "Current profile photo" : "No profile photo set"}

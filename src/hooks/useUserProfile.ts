@@ -72,11 +72,16 @@ export const useUserProfile = () => {
     if (!user) return;
 
     try {
-      const { data: profile } = await supabase
+      const { data: profile, error } = await supabase
         .from("profiles")
         .select("*")
         .eq("user_id", user.id)
         .single();
+
+      if (error) {
+        console.error("Error fetching profile:", error);
+        return;
+      }
 
       setProfile(profile);
     } catch (error) {

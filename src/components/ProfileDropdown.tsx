@@ -9,7 +9,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import UserAvatar from "./UserAvatar";
 import { 
   User, 
   Mail, 
@@ -35,7 +35,7 @@ import {
 const ProfileDropdown = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
-  const { profile } = useUserProfile();
+  const { profile, refreshProfile } = useUserProfile();
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
 
@@ -87,12 +87,7 @@ const ProfileDropdown = () => {
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <button className="p-1 rounded-full active:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-sports-teal focus:ring-offset-2">
-            <Avatar className="h-10 w-10">
-              <AvatarImage src={profile?.avatar_url || "/placeholder.svg"} />
-              <AvatarFallback className="bg-sports-teal text-white">
-                <User className="h-5 w-5" />
-              </AvatarFallback>
-            </Avatar>
+            <UserAvatar />
           </button>
         </DropdownMenuTrigger>
         
