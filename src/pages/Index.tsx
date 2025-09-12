@@ -2,7 +2,9 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Trophy, Target, Activity, Dumbbell, Heart, Timer, Zap, Play, Menu, User, House } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 const Index = () => {
+  const navigate = useNavigate();
   return <div className="min-h-screen bg-background relative">
       {/* Background Pattern */}
       <div className="fixed inset-0 bg-sports-pattern opacity-40 pointer-events-none z-0" />
@@ -28,7 +30,7 @@ const Index = () => {
       {/* Main Content */}
       <main className="p-4 pb-24 pt-safe relative z-10">
         {/* Hero Assessment Section */}
-        <button className="w-full mb-6">
+        <button className="w-full mb-6" onClick={() => navigate("/assessment")}>
           <Card className="bg-gradient-to-br from-sports-teal to-sports-blue border-sports-teal shadow-card-sports overflow-hidden relative active:scale-95 transition-all duration-200 hover:shadow-sports">
             <CardContent className="p-6 min-h-[160px] flex items-center justify-center">
               <div className="text-center w-full">
@@ -48,7 +50,7 @@ const Index = () => {
         </button>
 
         {/* Sports Recommendation Card */}
-        <button className="w-full mb-6">
+        <button className="w-full mb-6" onClick={() => navigate("/sport-recommendation")}>
           <Card className="bg-gradient-sports text-white shadow-sports overflow-hidden relative active:scale-95 transition-all duration-200 hover:shadow-lg">
             <CardContent className="p-6 min-h-[140px] flex items-center justify-center rounded">
               <div className="text-center w-full">
@@ -76,7 +78,7 @@ const Index = () => {
         <section className="mb-8">
           <h3 className="text-lg sm:text-xl font-semibold mb-4 text-foreground px-1">Quick Measurements</h3>
           <div className="flex gap-3 overflow-x-auto scrollbar-hide pb-2 px-1">
-            <button className="flex-shrink-0">
+            <button className="flex-shrink-0" onClick={() => navigate("/height-measurement")}>
               <Card className="bg-sports-teal text-white shadow-card-sports active:scale-95 transition-all duration-200 hover:shadow-sports w-28 sm:w-32">
                 <CardContent className="p-4 text-center min-h-[100px] flex flex-col justify-center">
                   <Activity className="h-7 w-7 sm:h-8 sm:w-8 mx-auto mb-2" />
@@ -84,7 +86,7 @@ const Index = () => {
                 </CardContent>
               </Card>
             </button>
-            <button className="flex-shrink-0">
+            <button className="flex-shrink-0" onClick={() => navigate("/weight-measurement")}>
               <Card className="bg-sports-teal text-white shadow-card-sports active:scale-95 transition-all duration-200 hover:shadow-sports w-28 sm:w-32">
                 <CardContent className="p-4 text-center min-h-[100px] flex flex-col justify-center">
                   <Heart className="h-7 w-7 sm:h-8 sm:w-8 mx-auto mb-2" />
@@ -92,7 +94,7 @@ const Index = () => {
                 </CardContent>
               </Card>
             </button>
-            <button className="flex-shrink-0">
+            <button className="flex-shrink-0" onClick={() => navigate("/body-shape")}>
               <Card className="bg-sports-teal text-white shadow-card-sports active:scale-95 transition-all duration-200 hover:shadow-sports w-28 sm:w-32">
                 <CardContent className="p-4 text-center min-h-[100px] flex flex-col justify-center">
                   <User className="h-7 w-7 sm:h-8 sm:w-8 mx-auto mb-2" />
@@ -107,7 +109,7 @@ const Index = () => {
         <section className="mb-8">
           <h3 className="text-lg sm:text-xl font-semibold mb-4 text-foreground px-1">Sport Test</h3>
           <div className="flex gap-3 overflow-x-auto scrollbar-hide pb-2 px-1">
-            <button className="flex-shrink-0">
+            <button className="flex-shrink-0" onClick={() => navigate("/power-lifting")}>
               <Card className="bg-sports-teal text-white shadow-card-sports active:scale-95 transition-all duration-200 hover:shadow-sports w-28 sm:w-32">
                 <CardContent className="p-4 text-center min-h-[100px] flex flex-col justify-center">
                   <Dumbbell className="h-7 w-7 sm:h-8 sm:w-8 mx-auto mb-2" />
@@ -116,7 +118,7 @@ const Index = () => {
                 </CardContent>
               </Card>
             </button>
-            <button className="flex-shrink-0">
+            <button className="flex-shrink-0" onClick={() => navigate("/athletic-test")}>
               <Card className="bg-sports-teal text-white shadow-card-sports active:scale-95 transition-all duration-200 hover:shadow-sports w-28 sm:w-32">
                 <CardContent className="p-4 text-center min-h-[100px] flex flex-col justify-center">
                   <Zap className="h-7 w-7 sm:h-8 sm:w-8 mx-auto mb-2" />
@@ -130,7 +132,7 @@ const Index = () => {
         {/* Progress and Leaderboards Section */}
         <section className="mb-4">
           <div className="grid grid-cols-2 gap-3">
-            <button className="w-full">
+            <button className="w-full" onClick={() => navigate("/progress")}>
               <Card className="bg-gradient-to-br from-sports-teal to-sports-blue text-white shadow-card-sports active:scale-95 transition-all duration-200 hover:shadow-sports">
                 <CardContent className="p-4 sm:p-6 text-center min-h-[120px] flex flex-col justify-center">
                   <Target className="h-10 w-10 sm:h-12 sm:w-12 mx-auto mb-2 sm:mb-3" />
@@ -138,7 +140,7 @@ const Index = () => {
                 </CardContent>
               </Card>
             </button>
-            <button className="w-full">
+            <button className="w-full" onClick={() => navigate("/leaderboards")}>
               <Card className="bg-gradient-sports text-white shadow-card-sports active:scale-95 transition-all duration-200 hover:shadow-sports">
                 <CardContent className="p-4 sm:p-6 text-center min-h-[120px] flex flex-col justify-center">
                   <Trophy className="h-10 w-10 sm:h-12 sm:w-12 mx-auto mb-2 sm:mb-3" />
@@ -157,17 +159,26 @@ const Index = () => {
           <span className="text-xs font-medium">Home</span>
         </button>
         
-        <button className="flex flex-col items-center gap-1 p-3 text-foreground/60 min-h-[44px] min-w-[44px] rounded-lg active:bg-gray-100 transition-colors">
+        <button 
+          onClick={() => navigate("/tests")}
+          className="flex flex-col items-center gap-1 p-3 text-foreground/60 min-h-[44px] min-w-[44px] rounded-lg active:bg-gray-100 transition-colors"
+        >
           <Activity className="h-5 w-5 sm:h-6 sm:w-6" />
           <span className="text-xs font-medium">Tests</span>
         </button>
         
-        <button className="flex flex-col items-center gap-1 p-3 text-foreground/60 min-h-[44px] min-w-[44px] rounded-lg active:bg-gray-100 transition-colors">
+        <button 
+          onClick={() => navigate("/progress")}
+          className="flex flex-col items-center gap-1 p-3 text-foreground/60 min-h-[44px] min-w-[44px] rounded-lg active:bg-gray-100 transition-colors"
+        >
           <Target className="h-5 w-5 sm:h-6 sm:w-6" />
           <span className="text-xs font-medium">Progress</span>
         </button>
         
-        <button className="flex flex-col items-center gap-1 p-3 text-foreground/60 min-h-[44px] min-w-[44px] rounded-lg active:bg-gray-100 transition-colors">
+        <button 
+          onClick={() => navigate("/leaderboards")}
+          className="flex flex-col items-center gap-1 p-3 text-foreground/60 min-h-[44px] min-w-[44px] rounded-lg active:bg-gray-100 transition-colors"
+        >
           <Trophy className="h-5 w-5 sm:h-6 sm:w-6" />
           <span className="text-xs font-medium">Board</span>
         </button>
