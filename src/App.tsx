@@ -2,6 +2,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Landing from "./pages/Landing";
+import SignUp from "./pages/SignUp";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Assessment from "./pages/Assessment";
@@ -26,7 +28,9 @@ const App = () => (
     <Sonner />
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Index />} />
+        <Route path="/" element={<Landing />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/home" element={<Index />} />
         <Route path="/assessment" element={<Assessment />} />
         <Route path="/sport-recommendation" element={<SportRecommendation />} />
         <Route path="/progress" element={<Progress />} />
