@@ -3,11 +3,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Trophy, Target, Activity, Dumbbell, Heart, Timer, Zap, Play, Menu, User, House } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import heightIcon from "@/assets/height-icon.png";
-import weightIcon from "@/assets/weight-icon.png";
-import bodyShapeIcon from "@/assets/body-shape-icon.png";
-import powerliftingIcon from "@/assets/powerlifting-icon.png";
-import athleticIcon from "@/assets/athletic-icon.png";
 const Index = () => {
   const navigate = useNavigate();
   return <div className="min-h-screen bg-background relative">
@@ -86,7 +81,7 @@ const Index = () => {
             <button className="flex-shrink-0" onClick={() => navigate("/height-measurement")}>
               <Card className="bg-sports-navy text-white shadow-card-sports active:scale-95 transition-all duration-200 hover:shadow-lg w-28 sm:w-32">
                 <CardContent className="p-4 text-center min-h-[100px] flex flex-col justify-center">
-                  <img src={heightIcon} alt="Height measurement" className="h-7 w-7 sm:h-8 sm:w-8 mx-auto mb-2 object-contain" />
+                  <Activity className="h-7 w-7 sm:h-8 sm:w-8 mx-auto mb-2" />
                   <h4 className="font-semibold text-xs sm:text-sm">Height</h4>
                 </CardContent>
               </Card>
@@ -94,7 +89,7 @@ const Index = () => {
             <button className="flex-shrink-0" onClick={() => navigate("/weight-measurement")}>
               <Card className="bg-sports-maroon text-white shadow-maroon active:scale-95 transition-all duration-200 hover:shadow-lg w-28 sm:w-32">
                 <CardContent className="p-4 text-center min-h-[100px] flex flex-col justify-center">
-                  <img src={weightIcon} alt="Weight measurement" className="h-7 w-7 sm:h-8 sm:w-8 mx-auto mb-2 object-contain" />
+                  <Heart className="h-7 w-7 sm:h-8 sm:w-8 mx-auto mb-2" />
                   <h4 className="font-semibold text-xs sm:text-sm">Weight</h4>
                 </CardContent>
               </Card>
@@ -102,7 +97,7 @@ const Index = () => {
             <button className="flex-shrink-0" onClick={() => navigate("/body-shape")}>
               <Card className="bg-sports-emerald text-white shadow-card-sports active:scale-95 transition-all duration-200 hover:shadow-lg w-28 sm:w-32">
                 <CardContent className="p-4 text-center min-h-[100px] flex flex-col justify-center">
-                  <img src={bodyShapeIcon} alt="Body shape analysis" className="h-7 w-7 sm:h-8 sm:w-8 mx-auto mb-2 object-contain" />
+                  <User className="h-7 w-7 sm:h-8 sm:w-8 mx-auto mb-2" />
                   <h4 className="font-semibold text-xs sm:text-sm">Body Shape</h4>
                 </CardContent>
               </Card>
@@ -117,7 +112,7 @@ const Index = () => {
             <button className="flex-shrink-0" onClick={() => navigate("/power-lifting")}>
               <Card className="bg-sports-terracotta text-white shadow-maroon active:scale-95 transition-all duration-200 hover:shadow-lg w-28 sm:w-32">
                 <CardContent className="p-4 text-center min-h-[100px] flex flex-col justify-center">
-                  <img src={powerliftingIcon} alt="Power lifting" className="h-7 w-7 sm:h-8 sm:w-8 mx-auto mb-2 object-contain" />
+                  <Dumbbell className="h-7 w-7 sm:h-8 sm:w-8 mx-auto mb-2" />
                   <h4 className="font-semibold text-xs sm:text-sm">Power Lifting
                 </h4>
                 </CardContent>
@@ -126,7 +121,7 @@ const Index = () => {
             <button className="flex-shrink-0" onClick={() => navigate("/athletic-test")}>
               <Card className="bg-sports-gold text-white shadow-gold active:scale-95 transition-all duration-200 hover:shadow-lg w-28 sm:w-32">
                 <CardContent className="p-4 text-center min-h-[100px] flex flex-col justify-center">
-                  <img src={athleticIcon} alt="Athletic performance" className="h-7 w-7 sm:h-8 sm:w-8 mx-auto mb-2 object-contain" />
+                  <Zap className="h-7 w-7 sm:h-8 sm:w-8 mx-auto mb-2" />
                   <h4 className="font-semibold text-xs sm:text-sm">Athletic</h4>
                 </CardContent>
               </Card>
