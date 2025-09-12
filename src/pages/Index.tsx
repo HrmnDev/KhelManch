@@ -35,7 +35,7 @@ const Index = () => {
       <main className="p-4 pb-20">
         {/* Sports Recommendation Card */}
         <Card className="mb-6 bg-gradient-sports text-white shadow-sports overflow-hidden relative mx-auto max-w-sm">
-          <CardContent className="p-4">
+          <CardContent className="p-4 h-32">
             <div className="text-center">
               <h2 className="text-lg font-bold mb-3">Sports Recommendation System</h2>
               <Button 
