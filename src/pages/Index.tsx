@@ -131,7 +131,7 @@ const Index = () => {
         <section className="mb-4">
           <div className="grid grid-cols-2 gap-3">
             <button className="w-full">
-              <Card className="bg-sports-teal text-white shadow-card-sports active:scale-95 transition-all duration-200 hover:shadow-sports">
+              <Card className="bg-gradient-to-br from-sports-teal to-sports-blue text-white shadow-card-sports active:scale-95 transition-all duration-200 hover:shadow-sports">
                 <CardContent className="p-4 sm:p-6 text-center min-h-[120px] flex flex-col justify-center">
                   <Target className="h-10 w-10 sm:h-12 sm:w-12 mx-auto mb-2 sm:mb-3" />
                   <h4 className="font-semibold text-sm sm:text-lg">My Progress</h4>
@@ -139,7 +139,7 @@ const Index = () => {
               </Card>
             </button>
             <button className="w-full">
-              <Card className="bg-sports-teal text-white shadow-card-sports active:scale-95 transition-all duration-200 hover:shadow-sports">
+              <Card className="bg-gradient-sports text-white shadow-card-sports active:scale-95 transition-all duration-200 hover:shadow-sports">
                 <CardContent className="p-4 sm:p-6 text-center min-h-[120px] flex flex-col justify-center">
                   <Trophy className="h-10 w-10 sm:h-12 sm:w-12 mx-auto mb-2 sm:mb-3" />
                   <h4 className="font-semibold text-sm sm:text-lg">Leaderboards</h4>
