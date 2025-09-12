@@ -93,94 +93,6 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Hero Assessment Section */}
-        <button className="w-full mb-6 group" onClick={() => navigate("/assessment")}>
-          <Card className="bg-gradient-to-br from-sports-blue to-sports-blue-light border-sports-blue shadow-glow overflow-hidden relative hover:shadow-pulse transition-all duration-300 hover:scale-[1.02] active:scale-95">
-            <CardContent className="p-6 min-h-[180px] flex items-center justify-center relative">
-              {/* Sports Background Image */}
-              <div 
-                className="absolute inset-0 bg-cover bg-center opacity-60 rounded-lg"
-                style={{ backgroundImage: 'url(/lovable-uploads/005f6371-8cfa-48cb-8694-f2e1e1c2a90f.png)' }}
-              />
-              
-              {/* Dark overlay for text readability */}
-              <div className="absolute inset-0 bg-gradient-to-br from-sports-blue/85 to-sports-blue-light/85 rounded-lg" />
-              
-              <div className="text-center w-full relative z-20">
-                <div className="flex justify-center mb-3">
-                  <div className="bg-white/30 backdrop-blur-sm p-3 rounded-full pulse-glow shadow-lg">
-                    <Trophy className="h-8 w-8 text-white" />
-                  </div>
-                </div>
-                <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-white leading-tight drop-shadow-lg">🏆 Unleash Your Athletic Potential</h2>
-                <p className="text-lg sm:text-xl font-bold mb-4 text-white bg-sports-gold/90 backdrop-blur-sm px-4 py-2 rounded-lg inline-block shadow-lg">
-                  Get Scouted & Recruited
-                </p>
-                <p className="text-sm sm:text-base text-white/95 mb-6 leading-relaxed font-medium drop-shadow-md">
-                  Complete comprehensive fitness assessments, showcase your skills, and compete with athletes nationwide
-                </p>
-                
-                {/* Progress Indicator */}
-                <div className="mb-4">
-                  <ProgressBar 
-                    value={3} 
-                    max={10} 
-                    label="Assessment Progress" 
-                    color="gold"
-                    className="text-white/90 drop-shadow-sm"
-                  />
-                </div>
-                
-                <div className="bg-sports-gold hover:bg-sports-gold/90 text-white border-2 border-sports-gold min-h-[44px] px-8 text-base font-semibold rounded-lg flex items-center justify-center transition-all group-hover:shadow-lg backdrop-blur-sm">
-                  <Play className="h-5 w-5 mr-2" />
-                  Start Assessment
-                </div>
-              </div>
-              
-              {/* Floating Achievement Badge */}
-              <div className="absolute top-4 right-4 z-30">
-                <Badge className="bg-sports-gold/90 hover:bg-sports-gold text-white font-bold px-2 py-1 shadow-lg backdrop-blur-sm">
-                  +500 XP
-                </Badge>
-              </div>
-              
-              {/* Enhanced Decorative Elements */}
-              <div className="absolute top-4 left-4 opacity-80 z-30">
-                <div className="flex flex-wrap gap-1">
-                  <Star className="h-3 w-3 fill-yellow-300 text-yellow-300 animate-pulse" />
-                  <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </button>
-
-        {/* Quick Stats Grid */}
-        <div className="grid grid-cols-3 gap-3 mb-6">
-          <StatCard 
-            icon={Target}
-            label="Completed"
-            value={userData.completedTests}
-            trend="up"
-            trendValue="+3"
-            color="emerald"
-          />
-          <StatCard 
-            icon={TrendingUp}
-            label="Rank"
-            value="#142"
-            trend="up" 
-            trendValue="+25"
-            color="gold"
-          />
-          <StatCard 
-            icon={Award}
-            label="Badges"
-            value={userData.achievements}
-            color="saffron"
-          />
-        </div>
-
         {/* Sports Recommendation Card */}
         <button className="w-full mb-6 group" onClick={() => navigate("/sport-recommendation")}>
           <Card className="bg-gradient-emerald text-white shadow-card-sports overflow-hidden relative hover:shadow-glow transition-all duration-300 hover:scale-[1.02] active:scale-95">
@@ -221,6 +133,33 @@ const Index = () => {
             </CardContent>
           </Card>
         </button>
+
+        {/* Quick Stats Grid */}
+        <div className="grid grid-cols-3 gap-3 mb-6">
+          <StatCard 
+            icon={Target}
+            label="Completed"
+            value={userData.completedTests}
+            trend="up"
+            trendValue="+3"
+            color="emerald"
+          />
+          <StatCard 
+            icon={TrendingUp}
+            label="Rank"
+            value="#142"
+            trend="up" 
+            trendValue="+25"
+            color="gold"
+          />
+          <StatCard 
+            icon={Award}
+            label="Badges"
+            value={userData.achievements}
+            color="saffron"
+          />
+        </div>
+
 
         {/* Achievement Section */}
         <section className="mb-6">
