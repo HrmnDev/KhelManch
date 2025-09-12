@@ -16,6 +16,8 @@ import BodyShape from "./pages/BodyShape";
 import PowerLifting from "./pages/PowerLifting";
 import WeightLifting from "./pages/WeightLifting";
 import AthleticTest from "./pages/AthleticTest";
+import Sprints from "./pages/Sprints";
+import SitUps from "./pages/SitUps";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +40,8 @@ const App = () => (
           <Route path="/power-lifting" element={<PowerLifting />} />
           <Route path="/weight-lifting" element={<WeightLifting />} />
           <Route path="/athletic-test" element={<AthleticTest />} />
+          <Route path="/sprints" element={<Sprints />} />
+          <Route path="/sit-ups" element={<SitUps />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
