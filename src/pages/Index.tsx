@@ -41,6 +41,28 @@ const Index = () => {
 
       {/* Main Content */}
       <main className="p-4 pb-24 pt-safe relative z-10">
+        {/* Hero Assessment Section */}
+        <button className="w-full mb-6">
+          <Card className="bg-sports-orange/20 border-sports-orange/30 shadow-card-sports overflow-hidden relative active:scale-95 transition-all duration-200 hover:shadow-sports">
+            <CardContent className="p-6 min-h-[160px] flex items-center justify-center">
+              <div className="text-center w-full">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-sports-orange leading-tight">
+                  Sport Made Talent.
+                </h2>
+                <p className="text-lg sm:text-xl font-semibold mb-4 text-foreground/80">
+                  1 Year Recovered
+                </p>
+                <p className="text-sm sm:text-base text-foreground/70 mb-6 leading-relaxed">
+                  Complete fitness assessments and compete nationally
+                </p>
+                <div className="bg-sports-orange hover:bg-sports-orange/90 text-white border-0 min-h-[44px] px-8 text-base font-semibold rounded-lg flex items-center justify-center transition-colors">
+                  Start Assessment
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </button>
+
         {/* Sports Recommendation Card */}
         <button className="w-full mb-6">
           <Card className="bg-gradient-sports text-white shadow-sports overflow-hidden relative active:scale-95 transition-all duration-200 hover:shadow-lg">
