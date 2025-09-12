@@ -30,7 +30,7 @@ const Index = () => {
         {/* Hero Assessment Section */}
         <button className="w-full mb-6">
           <Card className="bg-sports-orange border-sports-orange shadow-card-sports overflow-hidden relative active:scale-95 transition-all duration-200 hover:shadow-sports">
-            <CardContent className="p-6 min-h-[160px] flex items-center justify-center">
+            <CardContent className="p-6 min-h-[160px] flex items-center justify-center bg-[#4fbce9]">
               <div className="text-center w-full">
                 <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-sports-orange leading-tight">Show Your Talent.</h2>
                 <p className="text-lg sm:text-xl font-semibold mb-4 text-foreground/80">Get Discovered
@@ -49,7 +49,7 @@ const Index = () => {
         {/* Sports Recommendation Card */}
         <button className="w-full mb-6">
           <Card className="bg-gradient-sports text-white shadow-sports overflow-hidden relative active:scale-95 transition-all duration-200 hover:shadow-lg">
-            <CardContent className="p-6 min-h-[140px] flex items-center justify-center">
+            <CardContent className="p-6 min-h-[140px] flex items-center justify-center rounded">
               <div className="text-center w-full">
                 <h2 className="text-lg sm:text-xl font-bold mb-4 leading-tight">Sports Recommendation System</h2>
                 <div className="bg-sports-orange hover:bg-sports-orange/90 text-white border-0 min-h-[44px] px-6 text-base font-medium rounded-md flex items-center justify-center">
