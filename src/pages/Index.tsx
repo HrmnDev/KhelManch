@@ -34,15 +34,15 @@ const Index = () => {
           <div>
             <h1 className="text-xl sm:text-2xl font-bold text-foreground">KhelManch</h1>
             <div className="flex items-center gap-2 text-xs">
-              <Crown className="h-3 w-3 text-sports-orange" />
-              <span className="font-semibold text-sports-orange">Level {userData.level}</span>
+              <Crown className="h-3 w-3 text-sports-blue" />
+              <span className="font-semibold text-sports-blue">Level {userData.level}</span>
             </div>
           </div>
         </div>
         
         <div className="flex items-center gap-3">
           {/* Daily Streak */}
-          <div className="hidden sm:flex items-center gap-1 bg-sports-orange/10 text-sports-orange px-2 py-1 rounded-lg">
+          <div className="hidden sm:flex items-center gap-1 bg-sports-blue/10 text-sports-blue px-2 py-1 rounded-lg">
             <Flame className="h-4 w-4" />
             <span className="font-bold text-sm">{userData.streak}</span>
           </div>
@@ -56,7 +56,7 @@ const Index = () => {
               showPercentage={false}
               className="text-xs"
             />
-            <div className="text-xs text-center mt-1 font-semibold text-sports-teal">
+            <div className="text-xs text-center mt-1 font-semibold text-sports-blue">
               {userData.xp}/{userData.maxXp} XP
             </div>
           </div>
@@ -80,14 +80,14 @@ const Index = () => {
         
         {/* Mobile Stats Row */}
         <div className="grid grid-cols-2 gap-3 mb-6 sm:hidden">
-          <div className="flex items-center gap-2 bg-sports-orange/10 text-sports-orange p-3 rounded-lg">
+          <div className="flex items-center gap-2 bg-sports-blue/10 text-sports-blue p-3 rounded-lg">
             <Flame className="h-5 w-5" />
             <div>
               <div className="font-bold">{userData.streak} Days</div>
               <div className="text-xs opacity-75">Streak</div>
             </div>
           </div>
-          <div className="bg-sports-teal/10 text-sports-teal p-3 rounded-lg">
+          <div className="bg-sports-grey/10 text-sports-grey p-3 rounded-lg">
             <div className="font-bold">{userData.totalPoints.toLocaleString()}</div>
             <div className="text-xs opacity-75">Total Points</div>
           </div>
@@ -95,7 +95,7 @@ const Index = () => {
 
         {/* Hero Assessment Section */}
         <button className="w-full mb-6 group" onClick={() => navigate("/assessment")}>
-          <Card className="bg-gradient-to-br from-sports-teal to-sports-teal-light border-sports-teal shadow-glow overflow-hidden relative hover:shadow-pulse transition-all duration-300 hover:scale-[1.02] active:scale-95">
+          <Card className="bg-gradient-to-br from-sports-blue to-sports-blue-light border-sports-blue shadow-glow overflow-hidden relative hover:shadow-pulse transition-all duration-300 hover:scale-[1.02] active:scale-95">
             <CardContent className="p-6 min-h-[180px] flex items-center justify-center relative">
               <div className="text-center w-full">
                 <div className="flex justify-center mb-3">
@@ -104,7 +104,7 @@ const Index = () => {
                   </div>
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-white leading-tight">🏆 Unleash Your Athletic Potential</h2>
-                <p className="text-lg sm:text-xl font-bold mb-4 text-white bg-sports-orange px-4 py-2 rounded-lg inline-block shadow-lg">
+                <p className="text-lg sm:text-xl font-bold mb-4 text-white bg-sports-gold px-4 py-2 rounded-lg inline-block shadow-lg">
                   Get Scouted & Recruited
                 </p>
                 <p className="text-sm sm:text-base text-white/90 mb-6 leading-relaxed font-medium">
@@ -122,7 +122,7 @@ const Index = () => {
                   />
                 </div>
                 
-                <div className="bg-sports-orange hover:bg-sports-orange/90 text-white border-2 border-sports-orange min-h-[44px] px-8 text-base font-semibold rounded-lg flex items-center justify-center transition-all group-hover:shadow-lg">
+                <div className="bg-sports-gold hover:bg-sports-gold/90 text-white border-2 border-sports-gold min-h-[44px] px-8 text-base font-semibold rounded-lg flex items-center justify-center transition-all group-hover:shadow-lg">
                   <Play className="h-5 w-5 mr-2" />
                   Start Assessment
                 </div>
@@ -130,7 +130,7 @@ const Index = () => {
               
               {/* Floating Achievement Badge */}
               <div className="absolute top-4 right-4">
-                <Badge className="bg-sports-orange hover:bg-sports-orange text-white font-bold px-2 py-1">
+                <Badge className="bg-sports-gold hover:bg-sports-gold text-white font-bold px-2 py-1">
                   +500 XP
                 </Badge>
               </div>
@@ -200,10 +200,10 @@ const Index = () => {
         <section className="mb-6">
           <div className="flex items-center justify-between mb-4">
           <h3 className="text-lg sm:text-xl font-semibold text-foreground px-1 flex items-center gap-2">
-            <Trophy className="h-5 w-5 text-sports-orange" />
+            <Trophy className="h-5 w-5 text-sports-gold" />
             Recent Achievements
           </h3>
-          <Button variant="ghost" size="sm" className="text-sports-teal hover:bg-sports-teal/10">
+          <Button variant="ghost" size="sm" className="text-sports-blue hover:bg-sports-blue/10">
             View All
           </Button>
           </div>
