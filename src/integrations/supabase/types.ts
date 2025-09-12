@@ -79,31 +79,85 @@ export type Database = {
       }
       profiles: {
         Row: {
+          age: number | null
           avatar_url: string | null
           created_at: string
           full_name: string | null
+          gender: string | null
           id: string
+          is_leaderboard_visible: boolean | null
           mobile: string | null
           updated_at: string
           user_id: string
         }
         Insert: {
+          age?: number | null
           avatar_url?: string | null
           created_at?: string
           full_name?: string | null
+          gender?: string | null
           id?: string
+          is_leaderboard_visible?: boolean | null
           mobile?: string | null
           updated_at?: string
           user_id: string
         }
         Update: {
+          age?: number | null
           avatar_url?: string | null
           created_at?: string
           full_name?: string | null
+          gender?: string | null
           id?: string
+          is_leaderboard_visible?: boolean | null
           mobile?: string | null
           updated_at?: string
           user_id?: string
+        }
+        Relationships: []
+      }
+      sample_leaderboard: {
+        Row: {
+          age: number
+          badges_earned: number | null
+          created_at: string
+          full_name: string
+          gender: string
+          id: string
+          level: number | null
+          rank_position: number
+          streak_days: number | null
+          total_points: number | null
+          total_tests_completed: number | null
+          xp: number | null
+        }
+        Insert: {
+          age: number
+          badges_earned?: number | null
+          created_at?: string
+          full_name: string
+          gender: string
+          id?: string
+          level?: number | null
+          rank_position: number
+          streak_days?: number | null
+          total_points?: number | null
+          total_tests_completed?: number | null
+          xp?: number | null
+        }
+        Update: {
+          age?: number
+          badges_earned?: number | null
+          created_at?: string
+          full_name?: string
+          gender?: string
+          id?: string
+          level?: number | null
+          rank_position?: number
+          streak_days?: number | null
+          total_points?: number | null
+          total_tests_completed?: number | null
+          xp?: number | null
         }
         Relationships: []
       }
@@ -135,6 +189,48 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      user_stats: {
+        Row: {
+          badges_earned: number | null
+          created_at: string
+          id: string
+          level: number | null
+          rank_position: number | null
+          streak_days: number | null
+          total_points: number | null
+          total_tests_completed: number | null
+          updated_at: string
+          user_id: string
+          xp: number | null
+        }
+        Insert: {
+          badges_earned?: number | null
+          created_at?: string
+          id?: string
+          level?: number | null
+          rank_position?: number | null
+          streak_days?: number | null
+          total_points?: number | null
+          total_tests_completed?: number | null
+          updated_at?: string
+          user_id: string
+          xp?: number | null
+        }
+        Update: {
+          badges_earned?: number | null
+          created_at?: string
+          id?: string
+          level?: number | null
+          rank_position?: number | null
+          streak_days?: number | null
+          total_points?: number | null
+          total_tests_completed?: number | null
+          updated_at?: string
+          user_id?: string
+          xp?: number | null
+        }
+        Relationships: []
       }
       videos: {
         Row: {
