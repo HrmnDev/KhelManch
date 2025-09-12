@@ -45,9 +45,9 @@ const Layout = ({ children, title = "KhelManch" }: LayoutProps) => {
       {/* Bottom Navigation */}
       <div className="fixed bottom-0 left-0 right-0 h-20 pb-safe bg-white/95 backdrop-blur-sm border-t flex items-center justify-around px-2 z-50 shadow-lg">
         <button 
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/home")}
           className={`flex flex-col items-center gap-1 p-3 min-h-[44px] min-w-[44px] rounded-lg active:bg-gray-100 transition-colors ${
-            isActive("/") ? "text-sports-teal" : "text-foreground/60"
+            isActive("/home") ? "text-sports-teal" : "text-foreground/60"
           }`}
         >
           <House className="h-5 w-5 sm:h-6 sm:w-6" />
