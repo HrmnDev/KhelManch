@@ -111,7 +111,8 @@ const Index = () => {
               <Card className="bg-sports-teal text-white shadow-card-sports active:scale-95 transition-all duration-200 hover:shadow-sports w-28 sm:w-32">
                 <CardContent className="p-4 text-center min-h-[100px] flex flex-col justify-center">
                   <Dumbbell className="h-7 w-7 sm:h-8 sm:w-8 mx-auto mb-2" />
-                  <h4 className="font-semibold text-xs sm:text-sm">Dead Lift</h4>
+                  <h4 className="font-semibold text-xs sm:text-sm">Power Lifting
+                </h4>
                 </CardContent>
               </Card>
             </button>
