@@ -22,7 +22,7 @@ const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
         setLoading(false);
         
         // If user signs out or session expires, redirect to landing
-        if (event === 'SIGNED_OUT' || (!session && event === 'TOKEN_REFRESHED')) {
+        if (event === 'SIGNED_OUT') {
           navigate('/');
         }
       }

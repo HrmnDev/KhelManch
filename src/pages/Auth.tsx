@@ -32,7 +32,7 @@ const Auth = () => {
     setLoading(true);
 
     try {
-      const redirectUrl = `${window.location.origin}/home`;
+      const redirectUrl = 'https://0a174cf4-55a5-4713-805f-8dc33b7d524d.lovableproject.com/home';
       
       const { error } = await supabase.auth.signUp({
         email: formData.email,
