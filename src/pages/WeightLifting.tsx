@@ -6,7 +6,7 @@ import { useState } from "react";
 import ExerciseAnalysis from "@/components/ExerciseAnalysis";
 import { AnalysisResult } from "@/utils/exerciseAnalyzers";
 import { supabase } from "@/integrations/supabase/client";
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 
 const WeightLifting = () => {
   const [selectedVideo, setSelectedVideo] = useState<File | null>(null);
