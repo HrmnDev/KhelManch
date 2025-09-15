@@ -53,35 +53,24 @@ const WeightLifting = () => {
     
     setIsAnalyzing(true);
     try {
-      // Convert video file to base64
-      const reader = new FileReader();
-      const base64Video = await new Promise<string>((resolve, reject) => {
-        reader.onload = () => {
-          const result = reader.result as string;
-          // Remove data URL prefix to get just the base64 data
-          const base64Data = result.split(',')[1];
-          resolve(base64Data);
-        };
-        reader.onerror = reject;
-        reader.readAsDataURL(selectedVideo);
-      });
-
       // Get current user
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) {
         throw new Error('User not authenticated');
       }
 
-      // Call the edge function for video analysis
+      // Call the edge function for video analysis with just metadata
       const { data, error } = await supabase.functions.invoke('analyze-video', {
         body: {
-          videoFile: base64Video,
           exerciseType: 'deadlift',
-          userId: user.id
+          userId: user.id,
+          videoFileName: selectedVideo.name,
+          videoSize: selectedVideo.size
         }
       });
 
       if (error) {
+        console.error('Function error:', error);
         throw error;
       }
 

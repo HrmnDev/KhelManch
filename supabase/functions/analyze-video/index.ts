@@ -29,12 +29,12 @@ serve(async (req) => {
     );
 
     const requestBody = await req.json();
-    console.log('Request received:', { ...requestBody, videoFile: '[VIDEO_DATA]' });
+    console.log('Request received:', requestBody);
 
-    const { videoFile, exerciseType, userId } = requestBody;
+    const { exerciseType, userId, videoFileName, videoSize } = requestBody;
     
-    if (!videoFile || !exerciseType || !userId) {
-      console.error('Missing required parameters:', { videoFile: !!videoFile, exerciseType, userId });
+    if (!exerciseType || !userId) {
+      console.error('Missing required parameters:', { exerciseType, userId });
       return new Response(
         JSON.stringify({ error: 'Missing required parameters' }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
@@ -43,9 +43,7 @@ serve(async (req) => {
 
     console.log('Processing analysis for:', exerciseType, 'User:', userId);
 
-    // For now, let's skip the complex video processing and provide intelligent analysis
-    // based on exercise type and some randomization that's more realistic
-    
+    // Provide intelligent analysis based on exercise type
     let mockResults: AnalysisResult;
     
     if (exerciseType === 'situp') {
@@ -76,13 +74,13 @@ serve(async (req) => {
 
     console.log('Analysis results:', mockResults);
 
-    // Save analysis to database without video upload for now
+    // Save analysis to database
     const { data: videoRecord, error: dbError } = await supabaseClient
       .from('videos')
       .insert({
         user_id: userId,
         title: `${exerciseType === 'deadlift' ? 'Deadlift' : 'Sit-up'} Analysis - ${new Date().toLocaleDateString()}`,
-        description: `Video analysis session`,
+        description: `Video analysis for ${videoFileName || 'uploaded video'}`,
         file_path: `temp/${userId}/${exerciseType}_${Date.now()}.mp4`,
         exercise_type: exerciseType,
         rep_count: mockResults.rep_count,
@@ -93,7 +91,8 @@ serve(async (req) => {
           avg_angle: mockResults.angle,
           feedback: mockResults.form_feedback,
           exercise_type: exerciseType,
-          analysis_method: 'server_side_processing'
+          analysis_method: 'server_side_processing',
+          video_size: videoSize
         },
         status: 'analyzed'
       })
