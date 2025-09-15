@@ -5,12 +5,15 @@ import { User, Upload, PlayCircle, FileVideo, Camera } from "lucide-react";
 import { useState } from "react";
 import ExerciseAnalysis from "@/components/ExerciseAnalysis";
 import { AnalysisResult } from "@/utils/exerciseAnalyzers";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/components/ui/use-toast";
 
 const SitUps = () => {
   const [selectedVideo, setSelectedVideo] = useState<File | null>(null);
   const [dragActive, setDragActive] = useState(false);
   const [analysisResults, setAnalysisResults] = useState<AnalysisResult | null>(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const { toast } = useToast();
 
   const handleDrag = (e: React.DragEvent) => {
     e.preventDefault();
@@ -50,27 +53,55 @@ const SitUps = () => {
     
     setIsAnalyzing(true);
     try {
-      // Create video element for analysis
-      const video = document.createElement('video');
-      const url = URL.createObjectURL(selectedVideo);
-      video.src = url;
-      
-      // For now, we'll simulate analysis since video processing requires more complex setup
-      // In a real implementation, you'd process the video frame by frame with MediaPipe
-      await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate processing
-      
-      // Mock analysis results for demonstration
-      const mockResults: AnalysisResult = {
-        rep_count: Math.floor(Math.random() * 15) + 5,
-        current_stage: 'up',
-        angle: Math.floor(Math.random() * 60) + 30,
-        form_feedback: ['Good form detected!', 'Maintain consistent pace']
-      };
-      
-      setAnalysisResults(mockResults);
-      URL.revokeObjectURL(url);
+      // Convert video file to base64
+      const reader = new FileReader();
+      const base64Video = await new Promise<string>((resolve, reject) => {
+        reader.onload = () => {
+          const result = reader.result as string;
+          // Remove data URL prefix to get just the base64 data
+          const base64Data = result.split(',')[1];
+          resolve(base64Data);
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(selectedVideo);
+      });
+
+      // Get current user
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) {
+        throw new Error('User not authenticated');
+      }
+
+      // Call the edge function for video analysis
+      const { data, error } = await supabase.functions.invoke('analyze-video', {
+        body: {
+          videoFile: base64Video,
+          exerciseType: 'situp',
+          userId: user.id
+        }
+      });
+
+      if (error) {
+        throw error;
+      }
+
+      if (data?.analysis) {
+        setAnalysisResults(data.analysis);
+        toast({
+          title: "Analysis Complete",
+          description: `Analyzed video successfully! Found ${data.analysis.rep_count} reps.`,
+        });
+      } else {
+        throw new Error('No analysis results received');
+      }
+
     } catch (error) {
       console.error('Analysis failed:', error);
+      toast({
+        title: "Analysis Failed", 
+        description: error.message || "Unable to analyze video. Please try again.",
+        variant: "destructive",
+      });
     } finally {
       setIsAnalyzing(false);
     }
