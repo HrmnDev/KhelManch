@@ -239,9 +239,14 @@ export type Database = {
           created_at: string
           description: string | null
           duration: number | null
+          exercise_type: string | null
+          feedback_points: Json | null
           file_path: string
           file_size: number | null
+          form_score: number | null
           id: string
+          pose_data: Json | null
+          rep_count: number | null
           status: string
           title: string
           updated_at: string
@@ -253,9 +258,14 @@ export type Database = {
           created_at?: string
           description?: string | null
           duration?: number | null
+          exercise_type?: string | null
+          feedback_points?: Json | null
           file_path: string
           file_size?: number | null
+          form_score?: number | null
           id?: string
+          pose_data?: Json | null
+          rep_count?: number | null
           status?: string
           title: string
           updated_at?: string
@@ -267,9 +277,14 @@ export type Database = {
           created_at?: string
           description?: string | null
           duration?: number | null
+          exercise_type?: string | null
+          feedback_points?: Json | null
           file_path?: string
           file_size?: number | null
+          form_score?: number | null
           id?: string
+          pose_data?: Json | null
+          rep_count?: number | null
           status?: string
           title?: string
           updated_at?: string
