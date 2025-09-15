@@ -42,7 +42,9 @@ const ExerciseAnalysis: React.FC<ExerciseAnalysisProps> = ({ exerciseType, onAna
       // Initialize MediaPipe Pose
       console.log('Creating new Pose instance...');
       const poseInstance = new Pose({
-        locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/pose@0.2/${file}`,
+        locateFile: (file) => {
+          return `https://cdn.jsdelivr.net/npm/@mediapipe/pose@0.5/${file}`;
+        },
       });
       console.log('Pose instance created successfully:', poseInstance);
 

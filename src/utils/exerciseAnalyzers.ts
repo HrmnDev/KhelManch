@@ -1,5 +1,4 @@
 // Exercise Analysis Utilities
-import * as mediapipePose from '@mediapipe/pose';
 
 export interface PosePoints {
   left_shoulder: [number, number];
@@ -44,17 +43,18 @@ export class DeadliftAnalyzer {
     }
   }
 
-  getPosePoints(landmarks: any): PosePoints | null {
-    if (!landmarks?.landmark) return null;
+  getPosePoints(results: any): PosePoints | null {
+    if (!results?.poseLandmarks) return null;
     
     try {
+      const landmarks = results.poseLandmarks;
       return {
-        left_shoulder: [landmarks.landmark[11].x, landmarks.landmark[11].y],
-        left_hip: [landmarks.landmark[23].x, landmarks.landmark[23].y],
-        left_knee: [landmarks.landmark[25].x, landmarks.landmark[25].y],
-        right_shoulder: [landmarks.landmark[12].x, landmarks.landmark[12].y],
-        right_hip: [landmarks.landmark[24].x, landmarks.landmark[24].y],
-        right_knee: [landmarks.landmark[26].x, landmarks.landmark[26].y],
+        left_shoulder: [landmarks[11].x, landmarks[11].y],
+        left_hip: [landmarks[23].x, landmarks[23].y],
+        left_knee: [landmarks[25].x, landmarks[25].y],
+        right_shoulder: [landmarks[12].x, landmarks[12].y],
+        right_hip: [landmarks[24].x, landmarks[24].y],
+        right_knee: [landmarks[26].x, landmarks[26].y],
       };
     } catch {
       return null;
@@ -153,18 +153,19 @@ export class SitupAnalyzer {
     }
   }
 
-  getPosePoints(landmarks: any): PosePoints | null {
-    if (!landmarks?.landmark) return null;
+  getPosePoints(results: any): PosePoints | null {
+    if (!results?.poseLandmarks) return null;
     
     try {
+      const landmarks = results.poseLandmarks;
       return {
-        left_shoulder: [landmarks.landmark[11].x, landmarks.landmark[11].y],
-        left_hip: [landmarks.landmark[23].x, landmarks.landmark[23].y],
-        left_knee: [landmarks.landmark[25].x, landmarks.landmark[25].y],
-        right_shoulder: [landmarks.landmark[12].x, landmarks.landmark[12].y],
-        right_hip: [landmarks.landmark[24].x, landmarks.landmark[24].y],
-        right_knee: [landmarks.landmark[26].x, landmarks.landmark[26].y],
-        nose: [landmarks.landmark[0].x, landmarks.landmark[0].y],
+        left_shoulder: [landmarks[11].x, landmarks[11].y],
+        left_hip: [landmarks[23].x, landmarks[23].y],
+        left_knee: [landmarks[25].x, landmarks[25].y],
+        right_shoulder: [landmarks[12].x, landmarks[12].y],
+        right_hip: [landmarks[24].x, landmarks[24].y],
+        right_knee: [landmarks[26].x, landmarks[26].y],
+        nose: [landmarks[0].x, landmarks[0].y],
       };
     } catch {
       return null;
