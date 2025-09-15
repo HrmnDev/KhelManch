@@ -1,5 +1,5 @@
 // Exercise Analysis Utilities
-import { Pose } from '@mediapipe/pose';
+import * as mediapipePose from '@mediapipe/pose';
 
 export interface PosePoints {
   left_shoulder: [number, number];

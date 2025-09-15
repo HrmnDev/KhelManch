@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
+import * as mediapipePose from '@mediapipe/pose';
 import { Pose } from '@mediapipe/pose';
-import { Camera } from '@mediapipe/camera_utils';
+import * as cam from '@mediapipe/camera_utils';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -21,11 +22,15 @@ const ExerciseAnalysis: React.FC<ExerciseAnalysisProps> = ({ exerciseType, onAna
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [analysis, setAnalysis] = useState<AnalysisResult | null>(null);
   const [pose, setPose] = useState<Pose | null>(null);
-  const [camera, setCamera] = useState<Camera | null>(null);
+  const [camera, setCamera] = useState<cam.Camera | null>(null);
   const analyzerRef = useRef<DeadliftAnalyzer | SitupAnalyzer | null>(null);
   const { toast } = useToast();
 
   useEffect(() => {
+    console.log('ExerciseAnalysis useEffect starting');
+    console.log('mediapipePose:', mediapipePose);
+    console.log('Pose constructor:', Pose);
+    
     // Initialize analyzer based on exercise type
     if (exerciseType === 'deadlift') {
       analyzerRef.current = new DeadliftAnalyzer();
@@ -33,39 +38,54 @@ const ExerciseAnalysis: React.FC<ExerciseAnalysisProps> = ({ exerciseType, onAna
       analyzerRef.current = new SitupAnalyzer();
     }
 
-    // Initialize MediaPipe Pose
-    const poseInstance = new Pose({
-      locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/pose/${file}`,
-    });
+    try {
+      // Initialize MediaPipe Pose
+      console.log('Creating new Pose instance...');
+      const poseInstance = new Pose({
+        locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/pose@0.2/${file}`,
+      });
+      console.log('Pose instance created successfully:', poseInstance);
 
-    poseInstance.setOptions({
-      modelComplexity: 1,
-      smoothLandmarks: true,
-      enableSegmentation: false,
-      smoothSegmentation: false,
-      minDetectionConfidence: 0.5,
-      minTrackingConfidence: 0.5,
-    });
+      poseInstance.setOptions({
+        modelComplexity: 1,
+        smoothLandmarks: true,
+        enableSegmentation: false,
+        smoothSegmentation: false,
+        minDetectionConfidence: 0.5,
+        minTrackingConfidence: 0.5,
+      });
 
-    poseInstance.onResults((results) => {
-      if (analyzerRef.current && results.poseLandmarks && isAnalyzing) {
-        const posePoints = analyzerRef.current.getPosePoints(results);
-        if (posePoints) {
-          const analysisResult = analyzerRef.current.analyzeForm(posePoints);
-          if (analysisResult) {
-            setAnalysis(analysisResult);
-            drawResults(results, analysisResult);
+      poseInstance.onResults((results) => {
+        if (analyzerRef.current && results.poseLandmarks && isAnalyzing) {
+          const posePoints = analyzerRef.current.getPosePoints(results);
+          if (posePoints) {
+            const analysisResult = analyzerRef.current.analyzeForm(posePoints);
+            if (analysisResult) {
+              setAnalysis(analysisResult);
+              drawResults(results, analysisResult);
+            }
           }
+        } else if (isAnalyzing) {
+          drawResults(results, null);
         }
-      } else if (isAnalyzing) {
-        drawResults(results, null);
-      }
-    });
+      });
 
-    setPose(poseInstance);
+      setPose(poseInstance);
+      console.log('Pose setup completed successfully');
+    } catch (error) {
+      console.error('Error initializing MediaPipe Pose:', error);
+      toast({
+        title: "Initialization Error",
+        description: "Failed to initialize pose detection. Please refresh and try again.",
+        variant: "destructive",
+      });
+    }
 
     return () => {
-      poseInstance.close();
+      console.log('Cleaning up pose instance');
+      if (pose) {
+        pose.close();
+      }
     };
   }, [exerciseType, isAnalyzing]);
 
@@ -182,7 +202,7 @@ const ExerciseAnalysis: React.FC<ExerciseAnalysisProps> = ({ exerciseType, onAna
       video.srcObject = stream;
       video.play();
 
-      const cameraInstance = new Camera(video, {
+      const cameraInstance = new cam.Camera(video, {
         onFrame: async () => {
           if (pose && video.videoWidth > 0 && video.videoHeight > 0) {
             await pose.send({ image: video });
